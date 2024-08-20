@@ -38,8 +38,15 @@ logic [LUTRAM16X10-1:0] we_dec;
 
 always_comb begin : _decode
    we_dec = '0;  // Initialize to 0
-   we_dec [addr[ADDR_BITS:4]] = 1'b1;
-   rdat = read_all [addr[ADDR_BITS:4]];
+   if(LUTRAM16X10 > 1) begin
+      we_dec [addr[ADDR_BITS:4]] = 1'b1 & we;
+      rdat = read_all [addr[ADDR_BITS:4]];   
+   end
+   else begin // corner cases
+      we_dec = we;
+      rdat = read_all;
+   end
+   
 end
 genvar i;
 generate

@@ -10,11 +10,7 @@
 // dissemination to all third parties; and (3) shall use the same for operation
 // and maintenance purposes only.
 //--------------------------------------------------------------------------
-// Description: Simulation testbench for the PSRAM example
-// PSRAM is operated by sending in commands
-// Format of the commands sent to PSRAM through the UART RX is: 1st byte: <Read(0)/Write(1)>
-//                                                              2-5 byte: <24 bit Address>
-//                                                Write case:   6-7 byte: <16 bit Data>
+// Description: Simulation testbench for the LUTRAM arrays
 //==========================================================================
 `timescale 1ps/1ps
 module tb #(
@@ -25,6 +21,11 @@ module tb #(
 // Generate clock and run sim for the specified amount of time
    localparam  HALF_PERIOD_PS = 50_000; // 50MHz
    logic       clk_10;
+
+   logic [4:0] addr;
+   logic [9:0] wdat;
+   logic we;
+   logic [9:0] rdat;
 
    initial begin
       clk_10  = 1'b0;
@@ -43,12 +44,54 @@ module tb #(
          end
 
          begin: seq
+            // write to a location
+            #200ns
+            addr = 5'h0;
+            we   = 1;
+            wdat = 10'h0BC;
+            #200ns
+            // read from it
+            we = 0;
+
+            #1us
+            // write to a location
+            #200ns
+            addr = 5'b01111;
+            we   = 1;
+            wdat = 10'h1BC;
+            #200ns
+            // read from it
+            we = 0;
+
+            // write to a location
+            #200ns
+            addr = 5'b11111;
+            we   = 1;
+            wdat = 10'h2BC;
+            #200ns
+            // read from it
+            we = 0;
+
+
+                        // write to a location
+            #200ns
+            addr = 5'b10000;
+            we   = 1;
+            wdat = 10'h3BC;
+            #200ns
+            // read from it
+            we = 0;
+            
+            
             
          end
       join
    end
 
-   top dut (
+   top #(
+      .LUTRAM16X10(2)
+   )
+   dut (
       .clk(clk_10),
       .addr(addr),
       .wdat(wdat),
@@ -65,5 +108,5 @@ endmodule: tb
 ------------------------------------------------------------------------------
 Version History:
 ------------------------------------------------------------------------------
- 2024/06/12 TarikI: initial creation    
+ 2024/08/20 TarikI: initial creation    
 */
