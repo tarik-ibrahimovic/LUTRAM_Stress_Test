@@ -1,0 +1,38 @@
+********************************************
+*  SURELOG SystemVerilog  Compiler/Linter  *
+********************************************
+
+Copyright (c) 2017-2023 Alain Dargelas,
+http://www.apache.org/licenses/LICENSE-2.0
+
+VERSION: 1.82
+BUILT  : Jun  2 2024
+DATE   : 2024-06-11.05:25:43
+COMMAND: /home/tibrahimovic/projects/2.Simple--1/3.build/../1.hw/csr_pkg.sv /home/tibrahimovic/projects/2.Simple--1/3.build/../1.hw/csr_if.sv /home/tibrahimovic/projects/2.Simple--1/3.build/../1.hw/uart.WITHOUT-FIFO.sv /home/tibrahimovic/projects/2.Simple--1/3.build/../1.hw/top.sv /home/tibrahimovic/projects/2.Simple--1/3.build/../1.hw/psram.v -DYOSYS=1 -DSYNTHESIS=1
+
+[INF:CM0023] Creating log file "/home/tibrahimovic/projects/2.Simple--1/3.build/slpp_all/surelog.log".
+[INF:CP0300] Compilation...
+[INF:CP0301] /home/tibrahimovic/projects/2.Simple--1/1.hw/csr_pkg.sv:23:1: Compile package "csr_pkg".
+[INF:CP0304] /home/tibrahimovic/projects/2.Simple--1/1.hw/csr_if.sv:18:1: Compile interface "work@csr_if".
+[INF:CP0303] /home/tibrahimovic/projects/2.Simple--1/1.hw/psram.v:52:1: Compile module "work@psram".
+[INF:CP0303] /home/tibrahimovic/projects/2.Simple--1/1.hw/top.sv:41:1: Compile module "work@top".
+[INF:CP0303] /home/tibrahimovic/projects/2.Simple--1/1.hw/uart.WITHOUT-FIFO.sv:35:1: Compile module "work@uart".
+[INF:CP0302] Compile class "work@mailbox".
+[INF:CP0302] Compile class "work@process".
+[INF:CP0302] Compile class "work@semaphore".
+[INF:EL0526] Design Elaboration...
+[NTE:EL0503] /home/tibrahimovic/projects/2.Simple--1/1.hw/top.sv:41:1: Top level module "work@top".
+[WRN:EL0500] /home/tibrahimovic/projects/2.Simple--1/1.hw/top.sv:132:4: Cannot find a module definition for "work@top::CC_PLL".
+[NTE:EL0508] Nb Top level modules: 1.
+[NTE:EL0509] Max instance depth: 2.
+[NTE:EL0510] Nb instances: 4.
+[NTE:EL0511] Nb leaf instances: 1.
+[WRN:EL0512] Nb undefined modules: 1.
+[WRN:EL0513] Nb undefined instances: 1.
+[INF:UH0706] Creating UHDM Model...
+[INF:UH0707] Elaborating UHDM...
+[  FATAL] : 0
+[ SYNTAX] : 0
+[  ERROR] : 0
+[WARNING] : 3
+[   NOTE] : 5
