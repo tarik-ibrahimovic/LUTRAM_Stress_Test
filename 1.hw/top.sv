@@ -1,5 +1,3 @@
-//======================================================================== 
-// openCologne * NLnet-sponsored open-source design ware for GateMate
 //==========================================================================
 // Copyright (C) 2023 Chili.CHIPS*ba
 //--------------------------------------------------------------------------
@@ -12,14 +10,13 @@
 // dissemination to all third parties; and (3) shall use the same for operation
 // and maintenance purposes only.
 //--------------------------------------------------------------------------
-// Description: 
-//   
+// Description: LUTRAM arrays for capacity stress testing different FPGAs
 //==========================================================================
 
 /* verilator lint_off PINMISSING */
 module top 
 #(
-   parameter LUTRAM16X10 = 10
+   parameter LUTRAM16X10 = 314
 )
 (
    input   logic clk,
@@ -44,7 +41,7 @@ always_comb begin : _decode
    end
    else begin // corner cases
       we_dec = we;
-      rdat = read_all;
+      rdat = read_all[0];
    end
    
 end
@@ -58,7 +55,7 @@ generate
          .wdat(wdat),
          .we(we_dec[i])
       );
-   end
+   end 
 endgenerate
 
 endmodule: top

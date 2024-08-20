@@ -1,0 +1,15 @@
+Reading netlist file: "D:\repos\LUTRAM_Stress_Test\3.build\hw_build_GUI\impl\gwsynthesis\hw_build_GUI.vg"
+Parsing netlist file "D:\repos\LUTRAM_Stress_Test\3.build\hw_build_GUI\impl\gwsynthesis\hw_build_GUI.vg" completed
+Processing netlist completed
+Reading constraint file: "D:\repos\LUTRAM_Stress_Test\3.build\hw_build_GUI\src\top.pinout.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+PNR has been stopped
+Generate file "D:\repos\LUTRAM_Stress_Test\3.build\hw_build_GUI\impl\pnr\hw_build_GUI.pin.html" completed
+Generate file "D:\repos\LUTRAM_Stress_Test\3.build\hw_build_GUI\impl\pnr\hw_build_GUI.rpt.html" completed
+Generate file "D:\repos\LUTRAM_Stress_Test\3.build\hw_build_GUI\impl\pnr\hw_build_GUI.rpt.txt" completed
+Tue Aug 20 18:30:01 2024
+

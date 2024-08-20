@@ -1,0 +1,77 @@
+#=======================================
+# Physical Constraints file / Pinout
+#=======================================
+
+#---------------------------------------
+# Clocks
+#---------------------------------------
+IO_LOC  "clk"         4;
+IO_PORT "clk"         IO_TYPE=LVCMOS33;
+
+#---------------------------------------
+# 6 x LEDs
+#---------------------------------------
+
+IO_LOC  "rdat[0]" 15;
+IO_PORT "rdat[0]" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC  "rdat[2]" 16;
+IO_PORT "rdat[2]" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC  "rdat[4]" 17;
+IO_PORT "rdat[4]" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC  "rdat[5]" 18;
+IO_PORT "rdat[5]" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC  "rdat[7]" 19;
+IO_PORT "rdat[7]" IO_TYPE=LVCMOS33 DRIVE=8;
+  
+IO_LOC  "rdat[8]" 20;
+IO_PORT "rdat[8]" IO_TYPE=LVCMOS33 DRIVE=8;
+
+#---------------------------------------
+# UART/USB
+#---------------------------------------
+IO_LOC  "rdat[9]"   69;
+IO_PORT "rdat[9]"   IO_TYPE=LVCMOS33 DRIVE=8;
+
+#---------------------------------------
+# UART/RS422
+#---------------------------------------
+
+
+
+
+#---------------------------------------
+# DAC1/2 (MAX5180)
+#---------------------------------------
+IO_LOC  "we"          77;
+IO_LOC  "wdat[5]"      85;
+
+IO_LOC  "addr[0]"      75;
+IO_LOC  "addr[1]"      74;
+IO_LOC  "addr[2]"      73;
+IO_LOC  "addr[3]"      76;
+IO_LOC  "addr[4]"      80;
+IO_LOC  "addr[5]"      42;
+IO_LOC  "addr[6]"      41;
+
+IO_LOC  "wdat[9]"      51;
+
+IO_PORT "we"          IO_TYPE=LVCMOS33;
+IO_PORT "wdat[5]"      IO_TYPE=LVCMOS33;
+                            
+IO_PORT "addr[0]"      IO_TYPE=LVCMOS33;
+IO_PORT "addr[1]"      IO_TYPE=LVCMOS33;
+IO_PORT "addr[2]"      IO_TYPE=LVCMOS33;
+IO_PORT "addr[3]"      IO_TYPE=LVCMOS33;
+IO_PORT "addr[4]"      IO_TYPE=LVCMOS33;
+IO_PORT "addr[5]"      IO_TYPE=LVCMOS33;
+IO_PORT "addr[6]"      IO_TYPE=LVCMOS33;
+
+IO_PORT "wdat[9]"      IO_TYPE=LVCMOS33;
+
+
+
+#___End-of-File
