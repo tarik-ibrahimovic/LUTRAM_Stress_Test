@@ -25,13 +25,19 @@ Error: Failed to place 145 REG(s)
 
 
 # CologneChip CCGM1A1 
-Tool settings: 
-Synthesis maximum numbers:
-    - 314 modules instantiated
-    - Logic elements 15058/20736
+Tool settings: om-3 (speed), tm-3(worst timing), 
+<!-- Synthesis maximum numbers:
+    - 100 modules instantiated
+    - Logic elements 15058/20480
         - 11170 LUT
         - 648 RAM16S4 SSRAM
     - 15680/15750 DFF
-    - Routing fails! 10767 REG(s) unplaced
+Error: Failed to place 10767 REG(s) -->
+
 PnR included maximum numbers:
-    -
+    - 24 modules instantiated
+    - Logic elements 2255/20480
+    - 1600/15750 DFF
+FATAL ERROR: CPE_OUTMUX congestion at Component 333 with 353
+
+

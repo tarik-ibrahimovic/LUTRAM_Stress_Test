@@ -1,0 +1,1404 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.42+10 (git sha1 7f89a45ad, g++ 11.4.0-1ubuntu1~22.04 -fPIC -Os)
+
+-- Running command `read_verilog -sv ./*v; synth_gatemate -top top -nomx8 -vlog net/top_synth.v' --
+
+1. Executing Verilog-2005 frontend: ./lutram_16x10.v
+Parsing SystemVerilog input from `./lutram_16x10.v' to AST representation.
+Generating RTLIL representation for module `\lutram_16x10'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: ./top.v
+Parsing SystemVerilog input from `./top.v' to AST representation.
+Generating RTLIL representation for module `\top'.
+Successfully finished Verilog frontend.
+
+3. Executing SYNTH_GATEMATE pass.
+
+3.1. Executing Verilog-2005 frontend: /home/tibrahimovic/0.git-repo/yosys/share/gatemate/cells_sim.v
+Parsing Verilog input from `/home/tibrahimovic/0.git-repo/yosys/share/gatemate/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\CC_IBUF'.
+Generating RTLIL representation for module `\CC_OBUF'.
+Generating RTLIL representation for module `\CC_TOBUF'.
+Generating RTLIL representation for module `\CC_IOBUF'.
+Generating RTLIL representation for module `\CC_LVDS_IBUF'.
+Generating RTLIL representation for module `\CC_LVDS_OBUF'.
+Generating RTLIL representation for module `\CC_LVDS_TOBUF'.
+Generating RTLIL representation for module `\CC_LVDS_IOBUF'.
+Generating RTLIL representation for module `\CC_IDDR'.
+Generating RTLIL representation for module `\CC_ODDR'.
+Generating RTLIL representation for module `\CC_DFF'.
+Generating RTLIL representation for module `\CC_DLT'.
+Generating RTLIL representation for module `\CC_LUT1'.
+Generating RTLIL representation for module `\CC_LUT2'.
+Generating RTLIL representation for module `\CC_LUT3'.
+Generating RTLIL representation for module `\CC_LUT4'.
+Generating RTLIL representation for module `\CC_MX2'.
+Generating RTLIL representation for module `\CC_MX4'.
+Generating RTLIL representation for module `\CC_MX8'.
+Generating RTLIL representation for module `\CC_ADDF'.
+Generating RTLIL representation for module `\CC_MULT'.
+Generating RTLIL representation for module `\CC_BUFG'.
+Generating RTLIL representation for module `\CC_BRAM_20K'.
+Generating RTLIL representation for module `\CC_BRAM_40K'.
+Generating RTLIL representation for module `\CC_FIFO_40K'.
+Generating RTLIL representation for module `\CC_L2T4'.
+Generating RTLIL representation for module `\CC_L2T5'.
+Successfully finished Verilog frontend.
+
+3.2. Executing Verilog-2005 frontend: /home/tibrahimovic/0.git-repo/yosys/share/gatemate/cells_bb.v
+Parsing Verilog input from `/home/tibrahimovic/0.git-repo/yosys/share/gatemate/cells_bb.v' to AST representation.
+Generating RTLIL representation for module `\CC_PLL'.
+Generating RTLIL representation for module `\CC_PLL_ADV'.
+Generating RTLIL representation for module `\CC_SERDES'.
+Generating RTLIL representation for module `\CC_CFG_CTRL'.
+Generating RTLIL representation for module `\CC_USR_RSTN'.
+Successfully finished Verilog frontend.
+
+3.3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.3.1. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \lutram_16x10
+
+3.3.2. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \lutram_16x10
+Removed 0 unused modules.
+
+3.4. Executing PROC pass (convert processes to netlists).
+
+3.4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\top.$proc$./top.v:18$45'.
+Found and cleaned up 1 empty switch in `\lutram_16x10.$proc$./lutram_16x10.v:15$2'.
+Cleaned up 3 empty switches.
+
+3.4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$./top.v:18$45 in module top.
+Marked 1 switch rules as full_case in process $proc$./lutram_16x10.v:20$4 in module lutram_16x10.
+Removed a total of 0 dead cases.
+
+3.4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 26 assignments to connections.
+
+3.4.4. Executing PROC_INIT pass (extract init attributes).
+
+3.4.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~2 debug messages>
+
+3.4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\top.$proc$./top.v:0$62'.
+Creating decoders for process `\top.$proc$./top.v:0$61'.
+Creating decoders for process `\top.$proc$./top.v:18$45'.
+     1/1: $2$mem2reg_rd$\read_all$./top.v:24$44_DATA[9:0]$60
+Creating decoders for process `\lutram_16x10.$proc$./lutram_16x10.v:0$12'.
+Creating decoders for process `\lutram_16x10.$proc$./lutram_16x10.v:20$4'.
+     1/3: $1$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$11
+     2/3: $1$memwr$\dist_mem$./lutram_16x10.v:22$1_DATA[9:0]$10
+     3/3: $1$memwr$\dist_mem$./lutram_16x10.v:22$1_ADDR[3:0]$9
+Creating decoders for process `\lutram_16x10.$proc$./lutram_16x10.v:15$2'.
+
+3.4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\top.\_sv2v_0' from process `\top.$proc$./top.v:0$62'.
+No latch inferred for signal `\top.\read_all[0]' from process `\top.$proc$./top.v:0$61'.
+No latch inferred for signal `\top.\read_all[1]' from process `\top.$proc$./top.v:0$61'.
+No latch inferred for signal `\top.\read_all[2]' from process `\top.$proc$./top.v:0$61'.
+No latch inferred for signal `\top.\read_all[3]' from process `\top.$proc$./top.v:0$61'.
+No latch inferred for signal `\top.\read_all[4]' from process `\top.$proc$./top.v:0$61'.
+No latch inferred for signal `\top.\read_all[5]' from process `\top.$proc$./top.v:0$61'.
+No latch inferred for signal `\top.\read_all[6]' from process `\top.$proc$./top.v:0$61'.
+No latch inferred for signal `\top.\read_all[7]' from process `\top.$proc$./top.v:0$61'.
+No latch inferred for signal `\top.\read_all[8]' from process `\top.$proc$./top.v:0$61'.
+No latch inferred for signal `\top.\read_all[9]' from process `\top.$proc$./top.v:0$61'.
+No latch inferred for signal `\top.\rdat' from process `\top.$proc$./top.v:18$45'.
+No latch inferred for signal `\top.\we_dec' from process `\top.$proc$./top.v:18$45'.
+No latch inferred for signal `\top.$bitselwrite$pos$./top.v:23$13' from process `\top.$proc$./top.v:18$45'.
+No latch inferred for signal `\top.$mem2reg_rd$\read_all$./top.v:24$44_ADDR' from process `\top.$proc$./top.v:18$45'.
+No latch inferred for signal `\top.$mem2reg_rd$\read_all$./top.v:24$44_DATA' from process `\top.$proc$./top.v:18$45'.
+No latch inferred for signal `\lutram_16x10.\_sv2v_0' from process `\lutram_16x10.$proc$./lutram_16x10.v:0$12'.
+No latch inferred for signal `\lutram_16x10.\rdat' from process `\lutram_16x10.$proc$./lutram_16x10.v:15$2'.
+
+3.4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\lutram_16x10.$memwr$\dist_mem$./lutram_16x10.v:22$1_ADDR' using process `\lutram_16x10.$proc$./lutram_16x10.v:20$4'.
+  created $dff cell `$procdff$97' with positive edge clock.
+Creating register for signal `\lutram_16x10.$memwr$\dist_mem$./lutram_16x10.v:22$1_DATA' using process `\lutram_16x10.$proc$./lutram_16x10.v:20$4'.
+  created $dff cell `$procdff$98' with positive edge clock.
+Creating register for signal `\lutram_16x10.$memwr$\dist_mem$./lutram_16x10.v:22$1_EN' using process `\lutram_16x10.$proc$./lutram_16x10.v:20$4'.
+  created $dff cell `$procdff$99' with positive edge clock.
+
+3.4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `top.$proc$./top.v:0$62'.
+Removing empty process `top.$proc$./top.v:0$61'.
+Found and cleaned up 1 empty switch in `\top.$proc$./top.v:18$45'.
+Removing empty process `top.$proc$./top.v:18$45'.
+Removing empty process `lutram_16x10.$proc$./lutram_16x10.v:0$12'.
+Found and cleaned up 1 empty switch in `\lutram_16x10.$proc$./lutram_16x10.v:20$4'.
+Removing empty process `lutram_16x10.$proc$./lutram_16x10.v:20$4'.
+Removing empty process `lutram_16x10.$proc$./lutram_16x10.v:15$2'.
+Cleaned up 2 empty switches.
+
+3.4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~4 debug messages>
+Optimizing module lutram_16x10.
+<suppressed ~1 debug messages>
+
+3.5. Executing FLATTEN pass (flatten design).
+Deleting now unused module lutram_16x10.
+<suppressed ~10 debug messages>
+
+3.6. Executing TRIBUF pass.
+
+3.7. Executing DEMINOUT pass (demote inout ports to input or output).
+
+3.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 33 unused cells and 223 unused wires.
+<suppressed ~34 debug messages>
+
+3.10. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Found and reported 0 problems.
+
+3.11. Executing OPT pass (performing simple optimizations).
+
+3.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.11.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~31 debug messages>
+
+3.11.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+    Consolidated identical input bits for $mux cell $flatten\genblk1[0].u_lut.$procmux$89:
+      Old ports: A=10'0000000000, B=10'1111111111, Y=$flatten\genblk1[0].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7
+      New ports: A=1'0, B=1'1, Y=$flatten\genblk1[0].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0]
+      New connections: $flatten\genblk1[0].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [9:1] = { $flatten\genblk1[0].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[0].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[0].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[0].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[0].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[0].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[0].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[0].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[0].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] }
+    Consolidated identical input bits for $mux cell $flatten\genblk1[1].u_lut.$procmux$89:
+      Old ports: A=10'0000000000, B=10'1111111111, Y=$flatten\genblk1[1].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7
+      New ports: A=1'0, B=1'1, Y=$flatten\genblk1[1].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0]
+      New connections: $flatten\genblk1[1].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [9:1] = { $flatten\genblk1[1].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[1].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[1].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[1].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[1].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[1].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[1].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[1].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[1].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] }
+    Consolidated identical input bits for $mux cell $flatten\genblk1[2].u_lut.$procmux$89:
+      Old ports: A=10'0000000000, B=10'1111111111, Y=$flatten\genblk1[2].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7
+      New ports: A=1'0, B=1'1, Y=$flatten\genblk1[2].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0]
+      New connections: $flatten\genblk1[2].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [9:1] = { $flatten\genblk1[2].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[2].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[2].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[2].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[2].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[2].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[2].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[2].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[2].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] }
+    Consolidated identical input bits for $mux cell $flatten\genblk1[3].u_lut.$procmux$89:
+      Old ports: A=10'0000000000, B=10'1111111111, Y=$flatten\genblk1[3].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7
+      New ports: A=1'0, B=1'1, Y=$flatten\genblk1[3].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0]
+      New connections: $flatten\genblk1[3].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [9:1] = { $flatten\genblk1[3].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[3].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[3].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[3].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[3].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[3].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[3].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[3].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[3].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] }
+    Consolidated identical input bits for $mux cell $flatten\genblk1[4].u_lut.$procmux$89:
+      Old ports: A=10'0000000000, B=10'1111111111, Y=$flatten\genblk1[4].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7
+      New ports: A=1'0, B=1'1, Y=$flatten\genblk1[4].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0]
+      New connections: $flatten\genblk1[4].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [9:1] = { $flatten\genblk1[4].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[4].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[4].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[4].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[4].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[4].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[4].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[4].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[4].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] }
+    Consolidated identical input bits for $mux cell $flatten\genblk1[5].u_lut.$procmux$89:
+      Old ports: A=10'0000000000, B=10'1111111111, Y=$flatten\genblk1[5].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7
+      New ports: A=1'0, B=1'1, Y=$flatten\genblk1[5].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0]
+      New connections: $flatten\genblk1[5].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [9:1] = { $flatten\genblk1[5].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[5].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[5].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[5].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[5].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[5].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[5].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[5].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[5].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] }
+    Consolidated identical input bits for $mux cell $flatten\genblk1[6].u_lut.$procmux$89:
+      Old ports: A=10'0000000000, B=10'1111111111, Y=$flatten\genblk1[6].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7
+      New ports: A=1'0, B=1'1, Y=$flatten\genblk1[6].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0]
+      New connections: $flatten\genblk1[6].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [9:1] = { $flatten\genblk1[6].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[6].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[6].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[6].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[6].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[6].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[6].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[6].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[6].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] }
+    Consolidated identical input bits for $mux cell $flatten\genblk1[7].u_lut.$procmux$89:
+      Old ports: A=10'0000000000, B=10'1111111111, Y=$flatten\genblk1[7].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7
+      New ports: A=1'0, B=1'1, Y=$flatten\genblk1[7].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0]
+      New connections: $flatten\genblk1[7].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [9:1] = { $flatten\genblk1[7].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[7].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[7].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[7].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[7].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[7].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[7].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[7].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[7].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] }
+    Consolidated identical input bits for $mux cell $flatten\genblk1[8].u_lut.$procmux$89:
+      Old ports: A=10'0000000000, B=10'1111111111, Y=$flatten\genblk1[8].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7
+      New ports: A=1'0, B=1'1, Y=$flatten\genblk1[8].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0]
+      New connections: $flatten\genblk1[8].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [9:1] = { $flatten\genblk1[8].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[8].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[8].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[8].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[8].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[8].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[8].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[8].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[8].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] }
+    Consolidated identical input bits for $mux cell $flatten\genblk1[9].u_lut.$procmux$89:
+      Old ports: A=10'0000000000, B=10'1111111111, Y=$flatten\genblk1[9].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7
+      New ports: A=1'0, B=1'1, Y=$flatten\genblk1[9].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0]
+      New connections: $flatten\genblk1[9].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [9:1] = { $flatten\genblk1[9].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[9].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[9].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[9].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[9].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[9].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[9].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[9].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] $flatten\genblk1[9].u_lut.$0$memwr$\dist_mem$./lutram_16x10.v:22$1_EN[9:0]$7 [0] }
+  Optimizing cells in module \top.
+Performed a total of 10 changes.
+
+3.11.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.11.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.11.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.11.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.11.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.11.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~31 debug messages>
+
+3.11.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.11.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.11.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.11.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.11.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.11.16. Finished OPT passes. (There is nothing left to do.)
+
+3.12. Executing FSM pass (extract and optimize FSM).
+
+3.12.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+3.12.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+3.12.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+3.12.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.12.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+3.12.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+3.12.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+3.12.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+3.13. Executing OPT pass (performing simple optimizations).
+
+3.13.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.13.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.13.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~31 debug messages>
+
+3.13.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.13.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.13.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.13.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.13.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.13.9. Finished OPT passes. (There is nothing left to do.)
+
+3.14. Executing WREDUCE pass (reducing word size of cells).
+Converting cell top.$neg$./top.v:0$57 ($neg) from signed to unsigned.
+Removed top 1 bits (of 5) from port A of cell top.$neg$./top.v:0$57 ($neg).
+Removed top 1 bits (of 4) from port B of cell top.$procmux$80_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell top.$procmux$81_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell top.$procmux$82_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell top.$procmux$83_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell top.$procmux$84_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell top.$procmux$85_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell top.$procmux$86_CMP0 ($eq).
+
+3.15. Executing PEEPOPT pass (run peephole optimizers).
+
+3.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.17. Executing MUXPACK pass ($mux cell cascades to $pmux).
+Converted 0 (p)mux cells into 0 pmux cells.
+<suppressed ~3 debug messages>
+
+3.18. Executing SHARE pass (SAT-based resource sharing).
+Found 10 cells in module top that may be considered for resource sharing.
+  Analyzing resource sharing options for $flatten\genblk1[9].u_lut.$memrd$\dist_mem$./lutram_16x10.v:18$3 ($memrd):
+    Found 1 activation_patterns using ctrl signal $procmux$78_CMP.
+    No candidates found.
+  Analyzing resource sharing options for $flatten\genblk1[8].u_lut.$memrd$\dist_mem$./lutram_16x10.v:18$3 ($memrd):
+    Found 1 activation_patterns using ctrl signal $procmux$79_CMP.
+    No candidates found.
+  Analyzing resource sharing options for $flatten\genblk1[7].u_lut.$memrd$\dist_mem$./lutram_16x10.v:18$3 ($memrd):
+    Found 1 activation_patterns using ctrl signal $procmux$80_CMP.
+    No candidates found.
+  Analyzing resource sharing options for $flatten\genblk1[6].u_lut.$memrd$\dist_mem$./lutram_16x10.v:18$3 ($memrd):
+    Found 1 activation_patterns using ctrl signal $procmux$81_CMP.
+    No candidates found.
+  Analyzing resource sharing options for $flatten\genblk1[5].u_lut.$memrd$\dist_mem$./lutram_16x10.v:18$3 ($memrd):
+    Found 1 activation_patterns using ctrl signal $procmux$82_CMP.
+    No candidates found.
+  Analyzing resource sharing options for $flatten\genblk1[4].u_lut.$memrd$\dist_mem$./lutram_16x10.v:18$3 ($memrd):
+    Found 1 activation_patterns using ctrl signal $procmux$83_CMP.
+    No candidates found.
+  Analyzing resource sharing options for $flatten\genblk1[3].u_lut.$memrd$\dist_mem$./lutram_16x10.v:18$3 ($memrd):
+    Found 1 activation_patterns using ctrl signal $procmux$84_CMP.
+    No candidates found.
+  Analyzing resource sharing options for $flatten\genblk1[2].u_lut.$memrd$\dist_mem$./lutram_16x10.v:18$3 ($memrd):
+    Found 1 activation_patterns using ctrl signal $procmux$85_CMP.
+    No candidates found.
+  Analyzing resource sharing options for $flatten\genblk1[1].u_lut.$memrd$\dist_mem$./lutram_16x10.v:18$3 ($memrd):
+    Found 1 activation_patterns using ctrl signal $procmux$86_CMP.
+    No candidates found.
+  Analyzing resource sharing options for $flatten\genblk1[0].u_lut.$memrd$\dist_mem$./lutram_16x10.v:18$3 ($memrd):
+    Found 1 activation_patterns using ctrl signal $procmux$87_CMP.
+    No candidates found.
+
+3.19. Executing TECHMAP pass (map to technology primitives).
+
+3.19.1. Executing Verilog-2005 frontend: /home/tibrahimovic/0.git-repo/yosys/share/cmp2lut.v
+Parsing Verilog input from `/home/tibrahimovic/0.git-repo/yosys/share/cmp2lut.v' to AST representation.
+Generating RTLIL representation for module `\_90_lut_cmp_'.
+Successfully finished Verilog frontend.
+
+3.19.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~6 debug messages>
+
+3.20. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.22. Executing TECHMAP pass (map to technology primitives).
+
+3.22.1. Executing Verilog-2005 frontend: /home/tibrahimovic/0.git-repo/yosys/share/gatemate/mul_map.v
+Parsing Verilog input from `/home/tibrahimovic/0.git-repo/yosys/share/gatemate/mul_map.v' to AST representation.
+Generating RTLIL representation for module `\$__MULMXN'.
+Successfully finished Verilog frontend.
+
+3.22.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+3.23. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module top:
+  creating $macc model for $neg$./top.v:0$57 ($neg).
+  creating $alu model for $macc $neg$./top.v:0$57.
+  creating $alu cell for $neg$./top.v:0$57: $auto$alumacc.cc:485:replace_alu$112
+  created 1 $alu and 0 $macc cells.
+
+3.24. Executing OPT pass (performing simple optimizations).
+
+3.24.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.24.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.24.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~31 debug messages>
+
+3.24.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.24.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.24.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.24.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.24.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.24.9. Finished OPT passes. (There is nothing left to do.)
+
+3.25. Executing MEMORY pass.
+
+3.25.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+3.25.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+3.25.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+  Analyzing top.genblk1[0].u_lut.dist_mem write port 0.
+  Analyzing top.genblk1[1].u_lut.dist_mem write port 0.
+  Analyzing top.genblk1[2].u_lut.dist_mem write port 0.
+  Analyzing top.genblk1[3].u_lut.dist_mem write port 0.
+  Analyzing top.genblk1[4].u_lut.dist_mem write port 0.
+  Analyzing top.genblk1[5].u_lut.dist_mem write port 0.
+  Analyzing top.genblk1[6].u_lut.dist_mem write port 0.
+  Analyzing top.genblk1[7].u_lut.dist_mem write port 0.
+  Analyzing top.genblk1[8].u_lut.dist_mem write port 0.
+  Analyzing top.genblk1[9].u_lut.dist_mem write port 0.
+
+3.25.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+3.25.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `\genblk1[0].u_lut.dist_mem'[0] in module `\top': no output FF found.
+Checking read port `\genblk1[1].u_lut.dist_mem'[0] in module `\top': no output FF found.
+Checking read port `\genblk1[2].u_lut.dist_mem'[0] in module `\top': no output FF found.
+Checking read port `\genblk1[3].u_lut.dist_mem'[0] in module `\top': no output FF found.
+Checking read port `\genblk1[4].u_lut.dist_mem'[0] in module `\top': no output FF found.
+Checking read port `\genblk1[5].u_lut.dist_mem'[0] in module `\top': no output FF found.
+Checking read port `\genblk1[6].u_lut.dist_mem'[0] in module `\top': no output FF found.
+Checking read port `\genblk1[7].u_lut.dist_mem'[0] in module `\top': no output FF found.
+Checking read port `\genblk1[8].u_lut.dist_mem'[0] in module `\top': no output FF found.
+Checking read port `\genblk1[9].u_lut.dist_mem'[0] in module `\top': no output FF found.
+Checking read port address `\genblk1[0].u_lut.dist_mem'[0] in module `\top': no address FF found.
+Checking read port address `\genblk1[1].u_lut.dist_mem'[0] in module `\top': no address FF found.
+Checking read port address `\genblk1[2].u_lut.dist_mem'[0] in module `\top': no address FF found.
+Checking read port address `\genblk1[3].u_lut.dist_mem'[0] in module `\top': no address FF found.
+Checking read port address `\genblk1[4].u_lut.dist_mem'[0] in module `\top': no address FF found.
+Checking read port address `\genblk1[5].u_lut.dist_mem'[0] in module `\top': no address FF found.
+Checking read port address `\genblk1[6].u_lut.dist_mem'[0] in module `\top': no address FF found.
+Checking read port address `\genblk1[7].u_lut.dist_mem'[0] in module `\top': no address FF found.
+Checking read port address `\genblk1[8].u_lut.dist_mem'[0] in module `\top': no address FF found.
+Checking read port address `\genblk1[9].u_lut.dist_mem'[0] in module `\top': no address FF found.
+
+3.25.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.25.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+3.25.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+3.25.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.25.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+3.26. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.27. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+using FF mapping for memory top.genblk1[0].u_lut.dist_mem
+using FF mapping for memory top.genblk1[1].u_lut.dist_mem
+using FF mapping for memory top.genblk1[2].u_lut.dist_mem
+using FF mapping for memory top.genblk1[3].u_lut.dist_mem
+using FF mapping for memory top.genblk1[4].u_lut.dist_mem
+using FF mapping for memory top.genblk1[5].u_lut.dist_mem
+using FF mapping for memory top.genblk1[6].u_lut.dist_mem
+using FF mapping for memory top.genblk1[7].u_lut.dist_mem
+using FF mapping for memory top.genblk1[8].u_lut.dist_mem
+using FF mapping for memory top.genblk1[9].u_lut.dist_mem
+<suppressed ~350 debug messages>
+
+3.28. Executing TECHMAP pass (map to technology primitives).
+
+3.28.1. Executing Verilog-2005 frontend: /home/tibrahimovic/0.git-repo/yosys/share/gatemate/brams_map.v
+Parsing Verilog input from `/home/tibrahimovic/0.git-repo/yosys/share/gatemate/brams_map.v' to AST representation.
+Generating RTLIL representation for module `\$__CC_BRAM_TDP_'.
+Generating RTLIL representation for module `\$__CC_BRAM_SDP_'.
+Successfully finished Verilog frontend.
+
+3.28.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+3.29. Executing OPT pass (performing simple optimizations).
+
+3.29.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~31 debug messages>
+
+3.29.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.29.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.29.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 1 unused cells and 31 unused wires.
+<suppressed ~2 debug messages>
+
+3.29.5. Finished fast OPT passes.
+
+3.30. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory \genblk1[0].u_lut.dist_mem in module \top:
+  created 16 $dff cells and 0 static cells of width 10.
+  read interface: 0 $dff and 15 $mux cells.
+  write interface: 16 write mux blocks.
+Mapping memory \genblk1[1].u_lut.dist_mem in module \top:
+  created 16 $dff cells and 0 static cells of width 10.
+  read interface: 0 $dff and 15 $mux cells.
+  write interface: 16 write mux blocks.
+Mapping memory \genblk1[2].u_lut.dist_mem in module \top:
+  created 16 $dff cells and 0 static cells of width 10.
+  read interface: 0 $dff and 15 $mux cells.
+  write interface: 16 write mux blocks.
+Mapping memory \genblk1[3].u_lut.dist_mem in module \top:
+  created 16 $dff cells and 0 static cells of width 10.
+  read interface: 0 $dff and 15 $mux cells.
+  write interface: 16 write mux blocks.
+Mapping memory \genblk1[4].u_lut.dist_mem in module \top:
+  created 16 $dff cells and 0 static cells of width 10.
+  read interface: 0 $dff and 15 $mux cells.
+  write interface: 16 write mux blocks.
+Mapping memory \genblk1[5].u_lut.dist_mem in module \top:
+  created 16 $dff cells and 0 static cells of width 10.
+  read interface: 0 $dff and 15 $mux cells.
+  write interface: 16 write mux blocks.
+Mapping memory \genblk1[6].u_lut.dist_mem in module \top:
+  created 16 $dff cells and 0 static cells of width 10.
+  read interface: 0 $dff and 15 $mux cells.
+  write interface: 16 write mux blocks.
+Mapping memory \genblk1[7].u_lut.dist_mem in module \top:
+  created 16 $dff cells and 0 static cells of width 10.
+  read interface: 0 $dff and 15 $mux cells.
+  write interface: 16 write mux blocks.
+Mapping memory \genblk1[8].u_lut.dist_mem in module \top:
+  created 16 $dff cells and 0 static cells of width 10.
+  read interface: 0 $dff and 15 $mux cells.
+  write interface: 16 write mux blocks.
+Mapping memory \genblk1[9].u_lut.dist_mem in module \top:
+  created 16 $dff cells and 0 static cells of width 10.
+  read interface: 0 $dff and 15 $mux cells.
+  write interface: 16 write mux blocks.
+
+3.31. Executing OPT pass (performing simple optimizations).
+
+3.31.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~8 debug messages>
+
+3.31.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.31.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~161 debug messages>
+
+3.31.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.31.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.31.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.31.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 324 unused wires.
+<suppressed ~1 debug messages>
+
+3.31.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.31.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.31.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~161 debug messages>
+
+3.31.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.31.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.31.13. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $memory\genblk1[9].u_lut.dist_mem[9]$1486 ($dff) from module top (D = \wdat, Q = \genblk1[9].u_lut.dist_mem[9]).
+Adding EN signal on $memory\genblk1[9].u_lut.dist_mem[8]$1484 ($dff) from module top (D = \wdat, Q = \genblk1[9].u_lut.dist_mem[8]).
+Adding EN signal on $memory\genblk1[9].u_lut.dist_mem[7]$1482 ($dff) from module top (D = \wdat, Q = \genblk1[9].u_lut.dist_mem[7]).
+Adding EN signal on $memory\genblk1[9].u_lut.dist_mem[6]$1480 ($dff) from module top (D = \wdat, Q = \genblk1[9].u_lut.dist_mem[6]).
+Adding EN signal on $memory\genblk1[9].u_lut.dist_mem[5]$1478 ($dff) from module top (D = \wdat, Q = \genblk1[9].u_lut.dist_mem[5]).
+Adding EN signal on $memory\genblk1[9].u_lut.dist_mem[4]$1476 ($dff) from module top (D = \wdat, Q = \genblk1[9].u_lut.dist_mem[4]).
+Adding EN signal on $memory\genblk1[9].u_lut.dist_mem[3]$1474 ($dff) from module top (D = \wdat, Q = \genblk1[9].u_lut.dist_mem[3]).
+Adding EN signal on $memory\genblk1[9].u_lut.dist_mem[2]$1472 ($dff) from module top (D = \wdat, Q = \genblk1[9].u_lut.dist_mem[2]).
+Adding EN signal on $memory\genblk1[9].u_lut.dist_mem[1]$1470 ($dff) from module top (D = \wdat, Q = \genblk1[9].u_lut.dist_mem[1]).
+Adding EN signal on $memory\genblk1[9].u_lut.dist_mem[15]$1498 ($dff) from module top (D = \wdat, Q = \genblk1[9].u_lut.dist_mem[15]).
+Adding EN signal on $memory\genblk1[9].u_lut.dist_mem[14]$1496 ($dff) from module top (D = \wdat, Q = \genblk1[9].u_lut.dist_mem[14]).
+Adding EN signal on $memory\genblk1[9].u_lut.dist_mem[13]$1494 ($dff) from module top (D = \wdat, Q = \genblk1[9].u_lut.dist_mem[13]).
+Adding EN signal on $memory\genblk1[9].u_lut.dist_mem[12]$1492 ($dff) from module top (D = \wdat, Q = \genblk1[9].u_lut.dist_mem[12]).
+Adding EN signal on $memory\genblk1[9].u_lut.dist_mem[11]$1490 ($dff) from module top (D = \wdat, Q = \genblk1[9].u_lut.dist_mem[11]).
+Adding EN signal on $memory\genblk1[9].u_lut.dist_mem[10]$1488 ($dff) from module top (D = \wdat, Q = \genblk1[9].u_lut.dist_mem[10]).
+Adding EN signal on $memory\genblk1[9].u_lut.dist_mem[0]$1468 ($dff) from module top (D = \wdat, Q = \genblk1[9].u_lut.dist_mem[0]).
+Adding EN signal on $memory\genblk1[8].u_lut.dist_mem[9]$1345 ($dff) from module top (D = \wdat, Q = \genblk1[8].u_lut.dist_mem[9]).
+Adding EN signal on $memory\genblk1[8].u_lut.dist_mem[8]$1343 ($dff) from module top (D = \wdat, Q = \genblk1[8].u_lut.dist_mem[8]).
+Adding EN signal on $memory\genblk1[8].u_lut.dist_mem[7]$1341 ($dff) from module top (D = \wdat, Q = \genblk1[8].u_lut.dist_mem[7]).
+Adding EN signal on $memory\genblk1[8].u_lut.dist_mem[6]$1339 ($dff) from module top (D = \wdat, Q = \genblk1[8].u_lut.dist_mem[6]).
+Adding EN signal on $memory\genblk1[8].u_lut.dist_mem[5]$1337 ($dff) from module top (D = \wdat, Q = \genblk1[8].u_lut.dist_mem[5]).
+Adding EN signal on $memory\genblk1[8].u_lut.dist_mem[4]$1335 ($dff) from module top (D = \wdat, Q = \genblk1[8].u_lut.dist_mem[4]).
+Adding EN signal on $memory\genblk1[8].u_lut.dist_mem[3]$1333 ($dff) from module top (D = \wdat, Q = \genblk1[8].u_lut.dist_mem[3]).
+Adding EN signal on $memory\genblk1[8].u_lut.dist_mem[2]$1331 ($dff) from module top (D = \wdat, Q = \genblk1[8].u_lut.dist_mem[2]).
+Adding EN signal on $memory\genblk1[8].u_lut.dist_mem[1]$1329 ($dff) from module top (D = \wdat, Q = \genblk1[8].u_lut.dist_mem[1]).
+Adding EN signal on $memory\genblk1[8].u_lut.dist_mem[15]$1357 ($dff) from module top (D = \wdat, Q = \genblk1[8].u_lut.dist_mem[15]).
+Adding EN signal on $memory\genblk1[8].u_lut.dist_mem[14]$1355 ($dff) from module top (D = \wdat, Q = \genblk1[8].u_lut.dist_mem[14]).
+Adding EN signal on $memory\genblk1[8].u_lut.dist_mem[13]$1353 ($dff) from module top (D = \wdat, Q = \genblk1[8].u_lut.dist_mem[13]).
+Adding EN signal on $memory\genblk1[8].u_lut.dist_mem[12]$1351 ($dff) from module top (D = \wdat, Q = \genblk1[8].u_lut.dist_mem[12]).
+Adding EN signal on $memory\genblk1[8].u_lut.dist_mem[11]$1349 ($dff) from module top (D = \wdat, Q = \genblk1[8].u_lut.dist_mem[11]).
+Adding EN signal on $memory\genblk1[8].u_lut.dist_mem[10]$1347 ($dff) from module top (D = \wdat, Q = \genblk1[8].u_lut.dist_mem[10]).
+Adding EN signal on $memory\genblk1[8].u_lut.dist_mem[0]$1327 ($dff) from module top (D = \wdat, Q = \genblk1[8].u_lut.dist_mem[0]).
+Adding EN signal on $memory\genblk1[7].u_lut.dist_mem[9]$1204 ($dff) from module top (D = \wdat, Q = \genblk1[7].u_lut.dist_mem[9]).
+Adding EN signal on $memory\genblk1[7].u_lut.dist_mem[8]$1202 ($dff) from module top (D = \wdat, Q = \genblk1[7].u_lut.dist_mem[8]).
+Adding EN signal on $memory\genblk1[7].u_lut.dist_mem[7]$1200 ($dff) from module top (D = \wdat, Q = \genblk1[7].u_lut.dist_mem[7]).
+Adding EN signal on $memory\genblk1[7].u_lut.dist_mem[6]$1198 ($dff) from module top (D = \wdat, Q = \genblk1[7].u_lut.dist_mem[6]).
+Adding EN signal on $memory\genblk1[7].u_lut.dist_mem[5]$1196 ($dff) from module top (D = \wdat, Q = \genblk1[7].u_lut.dist_mem[5]).
+Adding EN signal on $memory\genblk1[7].u_lut.dist_mem[4]$1194 ($dff) from module top (D = \wdat, Q = \genblk1[7].u_lut.dist_mem[4]).
+Adding EN signal on $memory\genblk1[7].u_lut.dist_mem[3]$1192 ($dff) from module top (D = \wdat, Q = \genblk1[7].u_lut.dist_mem[3]).
+Adding EN signal on $memory\genblk1[7].u_lut.dist_mem[2]$1190 ($dff) from module top (D = \wdat, Q = \genblk1[7].u_lut.dist_mem[2]).
+Adding EN signal on $memory\genblk1[7].u_lut.dist_mem[1]$1188 ($dff) from module top (D = \wdat, Q = \genblk1[7].u_lut.dist_mem[1]).
+Adding EN signal on $memory\genblk1[7].u_lut.dist_mem[15]$1216 ($dff) from module top (D = \wdat, Q = \genblk1[7].u_lut.dist_mem[15]).
+Adding EN signal on $memory\genblk1[7].u_lut.dist_mem[14]$1214 ($dff) from module top (D = \wdat, Q = \genblk1[7].u_lut.dist_mem[14]).
+Adding EN signal on $memory\genblk1[7].u_lut.dist_mem[13]$1212 ($dff) from module top (D = \wdat, Q = \genblk1[7].u_lut.dist_mem[13]).
+Adding EN signal on $memory\genblk1[7].u_lut.dist_mem[12]$1210 ($dff) from module top (D = \wdat, Q = \genblk1[7].u_lut.dist_mem[12]).
+Adding EN signal on $memory\genblk1[7].u_lut.dist_mem[11]$1208 ($dff) from module top (D = \wdat, Q = \genblk1[7].u_lut.dist_mem[11]).
+Adding EN signal on $memory\genblk1[7].u_lut.dist_mem[10]$1206 ($dff) from module top (D = \wdat, Q = \genblk1[7].u_lut.dist_mem[10]).
+Adding EN signal on $memory\genblk1[7].u_lut.dist_mem[0]$1186 ($dff) from module top (D = \wdat, Q = \genblk1[7].u_lut.dist_mem[0]).
+Adding EN signal on $memory\genblk1[6].u_lut.dist_mem[9]$1063 ($dff) from module top (D = \wdat, Q = \genblk1[6].u_lut.dist_mem[9]).
+Adding EN signal on $memory\genblk1[6].u_lut.dist_mem[8]$1061 ($dff) from module top (D = \wdat, Q = \genblk1[6].u_lut.dist_mem[8]).
+Adding EN signal on $memory\genblk1[6].u_lut.dist_mem[7]$1059 ($dff) from module top (D = \wdat, Q = \genblk1[6].u_lut.dist_mem[7]).
+Adding EN signal on $memory\genblk1[6].u_lut.dist_mem[6]$1057 ($dff) from module top (D = \wdat, Q = \genblk1[6].u_lut.dist_mem[6]).
+Adding EN signal on $memory\genblk1[6].u_lut.dist_mem[5]$1055 ($dff) from module top (D = \wdat, Q = \genblk1[6].u_lut.dist_mem[5]).
+Adding EN signal on $memory\genblk1[6].u_lut.dist_mem[4]$1053 ($dff) from module top (D = \wdat, Q = \genblk1[6].u_lut.dist_mem[4]).
+Adding EN signal on $memory\genblk1[6].u_lut.dist_mem[3]$1051 ($dff) from module top (D = \wdat, Q = \genblk1[6].u_lut.dist_mem[3]).
+Adding EN signal on $memory\genblk1[6].u_lut.dist_mem[2]$1049 ($dff) from module top (D = \wdat, Q = \genblk1[6].u_lut.dist_mem[2]).
+Adding EN signal on $memory\genblk1[6].u_lut.dist_mem[1]$1047 ($dff) from module top (D = \wdat, Q = \genblk1[6].u_lut.dist_mem[1]).
+Adding EN signal on $memory\genblk1[6].u_lut.dist_mem[15]$1075 ($dff) from module top (D = \wdat, Q = \genblk1[6].u_lut.dist_mem[15]).
+Adding EN signal on $memory\genblk1[6].u_lut.dist_mem[14]$1073 ($dff) from module top (D = \wdat, Q = \genblk1[6].u_lut.dist_mem[14]).
+Adding EN signal on $memory\genblk1[6].u_lut.dist_mem[13]$1071 ($dff) from module top (D = \wdat, Q = \genblk1[6].u_lut.dist_mem[13]).
+Adding EN signal on $memory\genblk1[6].u_lut.dist_mem[12]$1069 ($dff) from module top (D = \wdat, Q = \genblk1[6].u_lut.dist_mem[12]).
+Adding EN signal on $memory\genblk1[6].u_lut.dist_mem[11]$1067 ($dff) from module top (D = \wdat, Q = \genblk1[6].u_lut.dist_mem[11]).
+Adding EN signal on $memory\genblk1[6].u_lut.dist_mem[10]$1065 ($dff) from module top (D = \wdat, Q = \genblk1[6].u_lut.dist_mem[10]).
+Adding EN signal on $memory\genblk1[6].u_lut.dist_mem[0]$1045 ($dff) from module top (D = \wdat, Q = \genblk1[6].u_lut.dist_mem[0]).
+Adding EN signal on $memory\genblk1[5].u_lut.dist_mem[9]$922 ($dff) from module top (D = \wdat, Q = \genblk1[5].u_lut.dist_mem[9]).
+Adding EN signal on $memory\genblk1[5].u_lut.dist_mem[8]$920 ($dff) from module top (D = \wdat, Q = \genblk1[5].u_lut.dist_mem[8]).
+Adding EN signal on $memory\genblk1[5].u_lut.dist_mem[7]$918 ($dff) from module top (D = \wdat, Q = \genblk1[5].u_lut.dist_mem[7]).
+Adding EN signal on $memory\genblk1[5].u_lut.dist_mem[6]$916 ($dff) from module top (D = \wdat, Q = \genblk1[5].u_lut.dist_mem[6]).
+Adding EN signal on $memory\genblk1[5].u_lut.dist_mem[5]$914 ($dff) from module top (D = \wdat, Q = \genblk1[5].u_lut.dist_mem[5]).
+Adding EN signal on $memory\genblk1[5].u_lut.dist_mem[4]$912 ($dff) from module top (D = \wdat, Q = \genblk1[5].u_lut.dist_mem[4]).
+Adding EN signal on $memory\genblk1[5].u_lut.dist_mem[3]$910 ($dff) from module top (D = \wdat, Q = \genblk1[5].u_lut.dist_mem[3]).
+Adding EN signal on $memory\genblk1[5].u_lut.dist_mem[2]$908 ($dff) from module top (D = \wdat, Q = \genblk1[5].u_lut.dist_mem[2]).
+Adding EN signal on $memory\genblk1[5].u_lut.dist_mem[1]$906 ($dff) from module top (D = \wdat, Q = \genblk1[5].u_lut.dist_mem[1]).
+Adding EN signal on $memory\genblk1[5].u_lut.dist_mem[15]$934 ($dff) from module top (D = \wdat, Q = \genblk1[5].u_lut.dist_mem[15]).
+Adding EN signal on $memory\genblk1[5].u_lut.dist_mem[14]$932 ($dff) from module top (D = \wdat, Q = \genblk1[5].u_lut.dist_mem[14]).
+Adding EN signal on $memory\genblk1[5].u_lut.dist_mem[13]$930 ($dff) from module top (D = \wdat, Q = \genblk1[5].u_lut.dist_mem[13]).
+Adding EN signal on $memory\genblk1[5].u_lut.dist_mem[12]$928 ($dff) from module top (D = \wdat, Q = \genblk1[5].u_lut.dist_mem[12]).
+Adding EN signal on $memory\genblk1[5].u_lut.dist_mem[11]$926 ($dff) from module top (D = \wdat, Q = \genblk1[5].u_lut.dist_mem[11]).
+Adding EN signal on $memory\genblk1[5].u_lut.dist_mem[10]$924 ($dff) from module top (D = \wdat, Q = \genblk1[5].u_lut.dist_mem[10]).
+Adding EN signal on $memory\genblk1[5].u_lut.dist_mem[0]$904 ($dff) from module top (D = \wdat, Q = \genblk1[5].u_lut.dist_mem[0]).
+Adding EN signal on $memory\genblk1[4].u_lut.dist_mem[9]$781 ($dff) from module top (D = \wdat, Q = \genblk1[4].u_lut.dist_mem[9]).
+Adding EN signal on $memory\genblk1[4].u_lut.dist_mem[8]$779 ($dff) from module top (D = \wdat, Q = \genblk1[4].u_lut.dist_mem[8]).
+Adding EN signal on $memory\genblk1[4].u_lut.dist_mem[7]$777 ($dff) from module top (D = \wdat, Q = \genblk1[4].u_lut.dist_mem[7]).
+Adding EN signal on $memory\genblk1[4].u_lut.dist_mem[6]$775 ($dff) from module top (D = \wdat, Q = \genblk1[4].u_lut.dist_mem[6]).
+Adding EN signal on $memory\genblk1[4].u_lut.dist_mem[5]$773 ($dff) from module top (D = \wdat, Q = \genblk1[4].u_lut.dist_mem[5]).
+Adding EN signal on $memory\genblk1[4].u_lut.dist_mem[4]$771 ($dff) from module top (D = \wdat, Q = \genblk1[4].u_lut.dist_mem[4]).
+Adding EN signal on $memory\genblk1[4].u_lut.dist_mem[3]$769 ($dff) from module top (D = \wdat, Q = \genblk1[4].u_lut.dist_mem[3]).
+Adding EN signal on $memory\genblk1[4].u_lut.dist_mem[2]$767 ($dff) from module top (D = \wdat, Q = \genblk1[4].u_lut.dist_mem[2]).
+Adding EN signal on $memory\genblk1[4].u_lut.dist_mem[1]$765 ($dff) from module top (D = \wdat, Q = \genblk1[4].u_lut.dist_mem[1]).
+Adding EN signal on $memory\genblk1[4].u_lut.dist_mem[15]$793 ($dff) from module top (D = \wdat, Q = \genblk1[4].u_lut.dist_mem[15]).
+Adding EN signal on $memory\genblk1[4].u_lut.dist_mem[14]$791 ($dff) from module top (D = \wdat, Q = \genblk1[4].u_lut.dist_mem[14]).
+Adding EN signal on $memory\genblk1[4].u_lut.dist_mem[13]$789 ($dff) from module top (D = \wdat, Q = \genblk1[4].u_lut.dist_mem[13]).
+Adding EN signal on $memory\genblk1[4].u_lut.dist_mem[12]$787 ($dff) from module top (D = \wdat, Q = \genblk1[4].u_lut.dist_mem[12]).
+Adding EN signal on $memory\genblk1[4].u_lut.dist_mem[11]$785 ($dff) from module top (D = \wdat, Q = \genblk1[4].u_lut.dist_mem[11]).
+Adding EN signal on $memory\genblk1[4].u_lut.dist_mem[10]$783 ($dff) from module top (D = \wdat, Q = \genblk1[4].u_lut.dist_mem[10]).
+Adding EN signal on $memory\genblk1[4].u_lut.dist_mem[0]$763 ($dff) from module top (D = \wdat, Q = \genblk1[4].u_lut.dist_mem[0]).
+Adding EN signal on $memory\genblk1[3].u_lut.dist_mem[9]$640 ($dff) from module top (D = \wdat, Q = \genblk1[3].u_lut.dist_mem[9]).
+Adding EN signal on $memory\genblk1[3].u_lut.dist_mem[8]$638 ($dff) from module top (D = \wdat, Q = \genblk1[3].u_lut.dist_mem[8]).
+Adding EN signal on $memory\genblk1[3].u_lut.dist_mem[7]$636 ($dff) from module top (D = \wdat, Q = \genblk1[3].u_lut.dist_mem[7]).
+Adding EN signal on $memory\genblk1[3].u_lut.dist_mem[6]$634 ($dff) from module top (D = \wdat, Q = \genblk1[3].u_lut.dist_mem[6]).
+Adding EN signal on $memory\genblk1[3].u_lut.dist_mem[5]$632 ($dff) from module top (D = \wdat, Q = \genblk1[3].u_lut.dist_mem[5]).
+Adding EN signal on $memory\genblk1[3].u_lut.dist_mem[4]$630 ($dff) from module top (D = \wdat, Q = \genblk1[3].u_lut.dist_mem[4]).
+Adding EN signal on $memory\genblk1[3].u_lut.dist_mem[3]$628 ($dff) from module top (D = \wdat, Q = \genblk1[3].u_lut.dist_mem[3]).
+Adding EN signal on $memory\genblk1[3].u_lut.dist_mem[2]$626 ($dff) from module top (D = \wdat, Q = \genblk1[3].u_lut.dist_mem[2]).
+Adding EN signal on $memory\genblk1[3].u_lut.dist_mem[1]$624 ($dff) from module top (D = \wdat, Q = \genblk1[3].u_lut.dist_mem[1]).
+Adding EN signal on $memory\genblk1[3].u_lut.dist_mem[15]$652 ($dff) from module top (D = \wdat, Q = \genblk1[3].u_lut.dist_mem[15]).
+Adding EN signal on $memory\genblk1[3].u_lut.dist_mem[14]$650 ($dff) from module top (D = \wdat, Q = \genblk1[3].u_lut.dist_mem[14]).
+Adding EN signal on $memory\genblk1[3].u_lut.dist_mem[13]$648 ($dff) from module top (D = \wdat, Q = \genblk1[3].u_lut.dist_mem[13]).
+Adding EN signal on $memory\genblk1[3].u_lut.dist_mem[12]$646 ($dff) from module top (D = \wdat, Q = \genblk1[3].u_lut.dist_mem[12]).
+Adding EN signal on $memory\genblk1[3].u_lut.dist_mem[11]$644 ($dff) from module top (D = \wdat, Q = \genblk1[3].u_lut.dist_mem[11]).
+Adding EN signal on $memory\genblk1[3].u_lut.dist_mem[10]$642 ($dff) from module top (D = \wdat, Q = \genblk1[3].u_lut.dist_mem[10]).
+Adding EN signal on $memory\genblk1[3].u_lut.dist_mem[0]$622 ($dff) from module top (D = \wdat, Q = \genblk1[3].u_lut.dist_mem[0]).
+Adding EN signal on $memory\genblk1[2].u_lut.dist_mem[9]$499 ($dff) from module top (D = \wdat, Q = \genblk1[2].u_lut.dist_mem[9]).
+Adding EN signal on $memory\genblk1[2].u_lut.dist_mem[8]$497 ($dff) from module top (D = \wdat, Q = \genblk1[2].u_lut.dist_mem[8]).
+Adding EN signal on $memory\genblk1[2].u_lut.dist_mem[7]$495 ($dff) from module top (D = \wdat, Q = \genblk1[2].u_lut.dist_mem[7]).
+Adding EN signal on $memory\genblk1[2].u_lut.dist_mem[6]$493 ($dff) from module top (D = \wdat, Q = \genblk1[2].u_lut.dist_mem[6]).
+Adding EN signal on $memory\genblk1[2].u_lut.dist_mem[5]$491 ($dff) from module top (D = \wdat, Q = \genblk1[2].u_lut.dist_mem[5]).
+Adding EN signal on $memory\genblk1[2].u_lut.dist_mem[4]$489 ($dff) from module top (D = \wdat, Q = \genblk1[2].u_lut.dist_mem[4]).
+Adding EN signal on $memory\genblk1[2].u_lut.dist_mem[3]$487 ($dff) from module top (D = \wdat, Q = \genblk1[2].u_lut.dist_mem[3]).
+Adding EN signal on $memory\genblk1[2].u_lut.dist_mem[2]$485 ($dff) from module top (D = \wdat, Q = \genblk1[2].u_lut.dist_mem[2]).
+Adding EN signal on $memory\genblk1[2].u_lut.dist_mem[1]$483 ($dff) from module top (D = \wdat, Q = \genblk1[2].u_lut.dist_mem[1]).
+Adding EN signal on $memory\genblk1[2].u_lut.dist_mem[15]$511 ($dff) from module top (D = \wdat, Q = \genblk1[2].u_lut.dist_mem[15]).
+Adding EN signal on $memory\genblk1[2].u_lut.dist_mem[14]$509 ($dff) from module top (D = \wdat, Q = \genblk1[2].u_lut.dist_mem[14]).
+Adding EN signal on $memory\genblk1[2].u_lut.dist_mem[13]$507 ($dff) from module top (D = \wdat, Q = \genblk1[2].u_lut.dist_mem[13]).
+Adding EN signal on $memory\genblk1[2].u_lut.dist_mem[12]$505 ($dff) from module top (D = \wdat, Q = \genblk1[2].u_lut.dist_mem[12]).
+Adding EN signal on $memory\genblk1[2].u_lut.dist_mem[11]$503 ($dff) from module top (D = \wdat, Q = \genblk1[2].u_lut.dist_mem[11]).
+Adding EN signal on $memory\genblk1[2].u_lut.dist_mem[10]$501 ($dff) from module top (D = \wdat, Q = \genblk1[2].u_lut.dist_mem[10]).
+Adding EN signal on $memory\genblk1[2].u_lut.dist_mem[0]$481 ($dff) from module top (D = \wdat, Q = \genblk1[2].u_lut.dist_mem[0]).
+Adding EN signal on $memory\genblk1[1].u_lut.dist_mem[9]$358 ($dff) from module top (D = \wdat, Q = \genblk1[1].u_lut.dist_mem[9]).
+Adding EN signal on $memory\genblk1[1].u_lut.dist_mem[8]$356 ($dff) from module top (D = \wdat, Q = \genblk1[1].u_lut.dist_mem[8]).
+Adding EN signal on $memory\genblk1[1].u_lut.dist_mem[7]$354 ($dff) from module top (D = \wdat, Q = \genblk1[1].u_lut.dist_mem[7]).
+Adding EN signal on $memory\genblk1[1].u_lut.dist_mem[6]$352 ($dff) from module top (D = \wdat, Q = \genblk1[1].u_lut.dist_mem[6]).
+Adding EN signal on $memory\genblk1[1].u_lut.dist_mem[5]$350 ($dff) from module top (D = \wdat, Q = \genblk1[1].u_lut.dist_mem[5]).
+Adding EN signal on $memory\genblk1[1].u_lut.dist_mem[4]$348 ($dff) from module top (D = \wdat, Q = \genblk1[1].u_lut.dist_mem[4]).
+Adding EN signal on $memory\genblk1[1].u_lut.dist_mem[3]$346 ($dff) from module top (D = \wdat, Q = \genblk1[1].u_lut.dist_mem[3]).
+Adding EN signal on $memory\genblk1[1].u_lut.dist_mem[2]$344 ($dff) from module top (D = \wdat, Q = \genblk1[1].u_lut.dist_mem[2]).
+Adding EN signal on $memory\genblk1[1].u_lut.dist_mem[1]$342 ($dff) from module top (D = \wdat, Q = \genblk1[1].u_lut.dist_mem[1]).
+Adding EN signal on $memory\genblk1[1].u_lut.dist_mem[15]$370 ($dff) from module top (D = \wdat, Q = \genblk1[1].u_lut.dist_mem[15]).
+Adding EN signal on $memory\genblk1[1].u_lut.dist_mem[14]$368 ($dff) from module top (D = \wdat, Q = \genblk1[1].u_lut.dist_mem[14]).
+Adding EN signal on $memory\genblk1[1].u_lut.dist_mem[13]$366 ($dff) from module top (D = \wdat, Q = \genblk1[1].u_lut.dist_mem[13]).
+Adding EN signal on $memory\genblk1[1].u_lut.dist_mem[12]$364 ($dff) from module top (D = \wdat, Q = \genblk1[1].u_lut.dist_mem[12]).
+Adding EN signal on $memory\genblk1[1].u_lut.dist_mem[11]$362 ($dff) from module top (D = \wdat, Q = \genblk1[1].u_lut.dist_mem[11]).
+Adding EN signal on $memory\genblk1[1].u_lut.dist_mem[10]$360 ($dff) from module top (D = \wdat, Q = \genblk1[1].u_lut.dist_mem[10]).
+Adding EN signal on $memory\genblk1[1].u_lut.dist_mem[0]$340 ($dff) from module top (D = \wdat, Q = \genblk1[1].u_lut.dist_mem[0]).
+Adding EN signal on $memory\genblk1[0].u_lut.dist_mem[9]$153 ($dff) from module top (D = \wdat, Q = \genblk1[0].u_lut.dist_mem[9]).
+Adding EN signal on $memory\genblk1[0].u_lut.dist_mem[8]$151 ($dff) from module top (D = \wdat, Q = \genblk1[0].u_lut.dist_mem[8]).
+Adding EN signal on $memory\genblk1[0].u_lut.dist_mem[7]$149 ($dff) from module top (D = \wdat, Q = \genblk1[0].u_lut.dist_mem[7]).
+Adding EN signal on $memory\genblk1[0].u_lut.dist_mem[6]$147 ($dff) from module top (D = \wdat, Q = \genblk1[0].u_lut.dist_mem[6]).
+Adding EN signal on $memory\genblk1[0].u_lut.dist_mem[5]$145 ($dff) from module top (D = \wdat, Q = \genblk1[0].u_lut.dist_mem[5]).
+Adding EN signal on $memory\genblk1[0].u_lut.dist_mem[4]$143 ($dff) from module top (D = \wdat, Q = \genblk1[0].u_lut.dist_mem[4]).
+Adding EN signal on $memory\genblk1[0].u_lut.dist_mem[3]$141 ($dff) from module top (D = \wdat, Q = \genblk1[0].u_lut.dist_mem[3]).
+Adding EN signal on $memory\genblk1[0].u_lut.dist_mem[2]$139 ($dff) from module top (D = \wdat, Q = \genblk1[0].u_lut.dist_mem[2]).
+Adding EN signal on $memory\genblk1[0].u_lut.dist_mem[1]$137 ($dff) from module top (D = \wdat, Q = \genblk1[0].u_lut.dist_mem[1]).
+Adding EN signal on $memory\genblk1[0].u_lut.dist_mem[15]$165 ($dff) from module top (D = \wdat, Q = \genblk1[0].u_lut.dist_mem[15]).
+Adding EN signal on $memory\genblk1[0].u_lut.dist_mem[14]$163 ($dff) from module top (D = \wdat, Q = \genblk1[0].u_lut.dist_mem[14]).
+Adding EN signal on $memory\genblk1[0].u_lut.dist_mem[13]$161 ($dff) from module top (D = \wdat, Q = \genblk1[0].u_lut.dist_mem[13]).
+Adding EN signal on $memory\genblk1[0].u_lut.dist_mem[12]$159 ($dff) from module top (D = \wdat, Q = \genblk1[0].u_lut.dist_mem[12]).
+Adding EN signal on $memory\genblk1[0].u_lut.dist_mem[11]$157 ($dff) from module top (D = \wdat, Q = \genblk1[0].u_lut.dist_mem[11]).
+Adding EN signal on $memory\genblk1[0].u_lut.dist_mem[10]$155 ($dff) from module top (D = \wdat, Q = \genblk1[0].u_lut.dist_mem[10]).
+Adding EN signal on $memory\genblk1[0].u_lut.dist_mem[0]$135 ($dff) from module top (D = \wdat, Q = \genblk1[0].u_lut.dist_mem[0]).
+
+3.31.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 160 unused cells and 160 unused wires.
+<suppressed ~161 debug messages>
+
+3.31.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.31.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.31.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+3.31.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.31.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.31.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.31.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.31.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.31.23. Finished OPT passes. (There is nothing left to do.)
+
+3.32. Executing TECHMAP pass (map to technology primitives).
+
+3.32.1. Executing Verilog-2005 frontend: /home/tibrahimovic/0.git-repo/yosys/share/techmap.v
+Parsing Verilog input from `/home/tibrahimovic/0.git-repo/yosys/share/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+3.32.2. Executing Verilog-2005 frontend: /home/tibrahimovic/0.git-repo/yosys/share/gatemate/arith_map.v
+Parsing Verilog input from `/home/tibrahimovic/0.git-repo/yosys/share/gatemate/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_gatemate_alu'.
+Successfully finished Verilog frontend.
+
+3.32.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $dffe.
+Using template $paramod$3ace65afedd5f6a6849996376b6c02262a5f23eb\_80_gatemate_alu for cells of type $alu.
+Using template $paramod$constmap:5a3f2d9bc64bf9737fc6bb68506e3b65c6c2d00b$paramod$1563d53d379463e43ffed4c707a38efc520349a7\_90_shift_shiftx for cells of type $shift.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$09350f5dcbaac34da260d4a84605bd607a0f224f\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $xor.
+No more expansions possible.
+<suppressed ~783 debug messages>
+
+3.33. Executing OPT pass (performing simple optimizations).
+
+3.33.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~141 debug messages>
+
+3.33.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~78 debug messages>
+Removed a total of 26 cells.
+
+3.33.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.33.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 7 unused cells and 111 unused wires.
+<suppressed ~8 debug messages>
+
+3.33.5. Finished fast OPT passes.
+
+3.34. Executing IOPADMAP pass (mapping inputs/outputs to IO-PAD cells).
+Mapping port top.addr using CC_IBUF.
+Mapping port top.clk using CC_IBUF.
+Mapping port top.rdat using CC_OBUF.
+Mapping port top.wdat using CC_IBUF.
+Mapping port top.we using CC_IBUF.
+Removed 0 unused cells and 2 unused wires.
+
+3.35. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.36. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+3.37. Executing TECHMAP pass (map to technology primitives).
+
+3.37.1. Executing Verilog-2005 frontend: /home/tibrahimovic/0.git-repo/yosys/share/gatemate/reg_map.v
+Parsing Verilog input from `/home/tibrahimovic/0.git-repo/yosys/share/gatemate/reg_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFFE_xxxx_'.
+Generating RTLIL representation for module `\$_DLATCH_xxx_'.
+Successfully finished Verilog frontend.
+
+3.37.2. Continuing TECHMAP pass.
+Using template $paramod$0ea0c0ecb89aa8a394fc59f557ec4597a0d47f80\$_DFFE_xxxx_ for cells of type $_DFFE_PP0P_.
+No more expansions possible.
+<suppressed ~1639 debug messages>
+
+3.38. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.39. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+3.40. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 9600 unused wires.
+<suppressed ~1 debug messages>
+
+3.41. Executing MUXCOVER pass (mapping to wider MUXes).
+Covering MUX trees in module top..
+  Treeifying 1539 MUXes:
+    Found tree with 15 MUXes at root \read_all[1] [0].
+    Found tree with 15 MUXes at root \read_all[1] [1].
+    Found tree with 15 MUXes at root \read_all[1] [2].
+    Found tree with 15 MUXes at root \read_all[1] [3].
+    Found tree with 15 MUXes at root \read_all[1] [4].
+    Found tree with 15 MUXes at root \read_all[1] [5].
+    Found tree with 15 MUXes at root \read_all[1] [6].
+    Found tree with 15 MUXes at root \read_all[1] [7].
+    Found tree with 15 MUXes at root \read_all[1] [8].
+    Found tree with 15 MUXes at root \read_all[1] [9].
+    Found tree with 15 MUXes at root \read_all[2] [0].
+    Found tree with 15 MUXes at root \read_all[2] [1].
+    Found tree with 15 MUXes at root \read_all[2] [2].
+    Found tree with 15 MUXes at root \read_all[2] [3].
+    Found tree with 15 MUXes at root \read_all[2] [4].
+    Found tree with 15 MUXes at root \read_all[2] [5].
+    Found tree with 15 MUXes at root \read_all[2] [6].
+    Found tree with 15 MUXes at root \read_all[2] [7].
+    Found tree with 15 MUXes at root \read_all[2] [8].
+    Found tree with 15 MUXes at root \read_all[2] [9].
+    Found tree with 15 MUXes at root \read_all[3] [0].
+    Found tree with 15 MUXes at root \read_all[3] [1].
+    Found tree with 15 MUXes at root \read_all[3] [2].
+    Found tree with 15 MUXes at root \read_all[3] [3].
+    Found tree with 15 MUXes at root \read_all[3] [4].
+    Found tree with 15 MUXes at root \read_all[3] [5].
+    Found tree with 15 MUXes at root \read_all[3] [6].
+    Found tree with 15 MUXes at root \read_all[3] [7].
+    Found tree with 15 MUXes at root \read_all[3] [8].
+    Found tree with 15 MUXes at root \read_all[3] [9].
+    Found tree with 15 MUXes at root \read_all[4] [0].
+    Found tree with 15 MUXes at root \read_all[4] [1].
+    Found tree with 15 MUXes at root \read_all[4] [2].
+    Found tree with 15 MUXes at root \read_all[4] [3].
+    Found tree with 15 MUXes at root \read_all[4] [4].
+    Found tree with 15 MUXes at root \read_all[4] [5].
+    Found tree with 15 MUXes at root \read_all[4] [6].
+    Found tree with 15 MUXes at root \read_all[4] [7].
+    Found tree with 15 MUXes at root \read_all[4] [8].
+    Found tree with 15 MUXes at root \read_all[4] [9].
+    Found tree with 15 MUXes at root \read_all[5] [0].
+    Found tree with 15 MUXes at root \read_all[5] [1].
+    Found tree with 15 MUXes at root \read_all[5] [2].
+    Found tree with 15 MUXes at root \read_all[5] [3].
+    Found tree with 15 MUXes at root \read_all[5] [4].
+    Found tree with 15 MUXes at root \read_all[5] [5].
+    Found tree with 15 MUXes at root \read_all[5] [6].
+    Found tree with 15 MUXes at root \read_all[5] [7].
+    Found tree with 15 MUXes at root \read_all[5] [8].
+    Found tree with 15 MUXes at root \read_all[5] [9].
+    Found tree with 15 MUXes at root \read_all[6] [0].
+    Found tree with 15 MUXes at root \read_all[6] [1].
+    Found tree with 15 MUXes at root \read_all[6] [2].
+    Found tree with 15 MUXes at root \read_all[6] [3].
+    Found tree with 15 MUXes at root \read_all[6] [4].
+    Found tree with 15 MUXes at root \read_all[6] [5].
+    Found tree with 15 MUXes at root \read_all[6] [6].
+    Found tree with 15 MUXes at root \read_all[6] [7].
+    Found tree with 15 MUXes at root \read_all[6] [8].
+    Found tree with 15 MUXes at root \read_all[6] [9].
+    Found tree with 15 MUXes at root \read_all[7] [0].
+    Found tree with 15 MUXes at root \read_all[7] [1].
+    Found tree with 15 MUXes at root \read_all[7] [2].
+    Found tree with 15 MUXes at root \read_all[7] [3].
+    Found tree with 15 MUXes at root \read_all[7] [4].
+    Found tree with 15 MUXes at root \read_all[7] [5].
+    Found tree with 15 MUXes at root \read_all[7] [6].
+    Found tree with 15 MUXes at root \read_all[7] [7].
+    Found tree with 15 MUXes at root \read_all[7] [8].
+    Found tree with 15 MUXes at root \read_all[7] [9].
+    Found tree with 15 MUXes at root \read_all[8] [0].
+    Found tree with 15 MUXes at root \read_all[8] [1].
+    Found tree with 15 MUXes at root \read_all[8] [2].
+    Found tree with 15 MUXes at root \read_all[8] [3].
+    Found tree with 15 MUXes at root \read_all[8] [4].
+    Found tree with 15 MUXes at root \read_all[8] [5].
+    Found tree with 15 MUXes at root \read_all[8] [6].
+    Found tree with 15 MUXes at root \read_all[8] [7].
+    Found tree with 15 MUXes at root \read_all[8] [8].
+    Found tree with 15 MUXes at root \read_all[8] [9].
+    Found tree with 15 MUXes at root \read_all[9] [0].
+    Found tree with 15 MUXes at root \read_all[9] [1].
+    Found tree with 15 MUXes at root \read_all[9] [2].
+    Found tree with 15 MUXes at root \read_all[9] [3].
+    Found tree with 15 MUXes at root \read_all[9] [4].
+    Found tree with 15 MUXes at root \read_all[9] [5].
+    Found tree with 15 MUXes at root \read_all[9] [6].
+    Found tree with 15 MUXes at root \read_all[9] [7].
+    Found tree with 15 MUXes at root \read_all[9] [8].
+    Found tree with 15 MUXes at root \read_all[9] [9].
+    Found tree with 5 MUXes at root \genblk1[0].u_lut.we.
+    Found tree with 1 MUXes at root \genblk1[1].u_lut.we.
+    Found tree with 2 MUXes at root \genblk1[2].u_lut.we.
+    Found tree with 2 MUXes at root \genblk1[3].u_lut.we.
+    Found tree with 2 MUXes at root \genblk1[4].u_lut.we.
+    Found tree with 2 MUXes at root \genblk1[5].u_lut.we.
+    Found tree with 2 MUXes at root \genblk1[6].u_lut.we.
+    Found tree with 2 MUXes at root \genblk1[7].u_lut.we.
+    Found tree with 2 MUXes at root \genblk1[8].u_lut.we.
+    Found tree with 1 MUXes at root \genblk1[9].u_lut.we.
+    Found tree with 1 MUXes at root $techmap$shift$./top.v:0$58.$2\buffer[25:0] [15].
+    Found tree with 1 MUXes at root $techmap$shift$./top.v:0$58.$2\buffer[25:0] [16].
+    Found tree with 1 MUXes at root $techmap$shift$./top.v:0$58.$4\buffer[25:0] [13].
+    Found tree with 1 MUXes at root $techmap$shift$./top.v:0$58.$4\buffer[25:0] [14].
+    Found tree with 1 MUXes at root $techmap$shift$./top.v:0$58.$4\buffer[25:0] [15].
+    Found tree with 1 MUXes at root $techmap$shift$./top.v:0$58.$4\buffer[25:0] [16].
+    Found tree with 1 MUXes at root $techmap$shift$./top.v:0$58.$6\buffer[25:0] [9].
+    Found tree with 1 MUXes at root $techmap$shift$./top.v:0$58.$1\buffer[25:0] [16].
+    Found tree with 16 MUXes at root $iopadmap$rdat [0].
+    Found tree with 16 MUXes at root $iopadmap$rdat [1].
+    Found tree with 16 MUXes at root $iopadmap$rdat [2].
+    Found tree with 16 MUXes at root $iopadmap$rdat [3].
+    Found tree with 16 MUXes at root $iopadmap$rdat [4].
+    Found tree with 16 MUXes at root $iopadmap$rdat [5].
+    Found tree with 16 MUXes at root $iopadmap$rdat [6].
+    Found tree with 16 MUXes at root $iopadmap$rdat [7].
+    Found tree with 16 MUXes at root $iopadmap$rdat [8].
+    Found tree with 16 MUXes at root $iopadmap$rdat [9].
+    Finished treeification: Found 118 trees.
+  Covering trees:
+    Replaced tree at \read_all[1] [0]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[1] [1]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[1] [2]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[1] [3]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[1] [4]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[1] [5]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[1] [6]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[1] [7]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[1] [8]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[1] [9]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[2] [0]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[2] [1]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[2] [2]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[2] [3]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[2] [4]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[2] [5]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[2] [6]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[2] [7]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[2] [8]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[2] [9]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[3] [0]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[3] [1]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[3] [2]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[3] [3]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[3] [4]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[3] [5]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[3] [6]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[3] [7]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[3] [8]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[3] [9]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[4] [0]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[4] [1]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[4] [2]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[4] [3]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[4] [4]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[4] [5]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[4] [6]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[4] [7]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[4] [8]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[4] [9]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[5] [0]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[5] [1]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[5] [2]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[5] [3]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[5] [4]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[5] [5]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[5] [6]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[5] [7]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[5] [8]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[5] [9]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[6] [0]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[6] [1]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[6] [2]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[6] [3]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[6] [4]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[6] [5]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[6] [6]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[6] [7]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[6] [8]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[6] [9]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[7] [0]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[7] [1]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[7] [2]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[7] [3]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[7] [4]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[7] [5]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[7] [6]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[7] [7]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[7] [8]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[7] [9]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[8] [0]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[8] [1]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[8] [2]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[8] [3]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[8] [4]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[8] [5]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[8] [6]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[8] [7]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[8] [8]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[8] [9]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[9] [0]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[9] [1]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[9] [2]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[9] [3]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[9] [4]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[9] [5]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[9] [6]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[9] [7]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[9] [8]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \read_all[9] [9]: 0 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \genblk1[0].u_lut.we: 5 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \genblk1[1].u_lut.we: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \genblk1[2].u_lut.we: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \genblk1[3].u_lut.we: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \genblk1[4].u_lut.we: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \genblk1[5].u_lut.we: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \genblk1[6].u_lut.we: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \genblk1[7].u_lut.we: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \genblk1[8].u_lut.we: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \genblk1[9].u_lut.we: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $techmap$shift$./top.v:0$58.$2\buffer[25:0] [15]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $techmap$shift$./top.v:0$58.$2\buffer[25:0] [16]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $techmap$shift$./top.v:0$58.$4\buffer[25:0] [13]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $techmap$shift$./top.v:0$58.$4\buffer[25:0] [14]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $techmap$shift$./top.v:0$58.$4\buffer[25:0] [15]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $techmap$shift$./top.v:0$58.$4\buffer[25:0] [16]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $techmap$shift$./top.v:0$58.$6\buffer[25:0] [9]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $techmap$shift$./top.v:0$58.$1\buffer[25:0] [16]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $iopadmap$rdat [0]: 1 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $iopadmap$rdat [1]: 1 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $iopadmap$rdat [2]: 1 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $iopadmap$rdat [3]: 1 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $iopadmap$rdat [4]: 1 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $iopadmap$rdat [5]: 1 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $iopadmap$rdat [6]: 1 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $iopadmap$rdat [7]: 1 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $iopadmap$rdat [8]: 1 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $iopadmap$rdat [9]: 1 MUX2, 5 MUX4, 0 MUX8, 0 MUX16
+  Added a total of 0 decoder MUXes.
+<suppressed ~27563 debug messages>
+
+3.42. Executing OPT pass (performing simple optimizations).
+
+3.42.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~16 debug messages>
+
+3.42.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.42.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.42.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.42.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.42.6. Executing OPT_SHARE pass.
+
+3.42.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.42.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 100 unused wires.
+<suppressed ~1 debug messages>
+
+3.42.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.42.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.42.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.42.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.42.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.42.14. Executing OPT_SHARE pass.
+
+3.42.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.42.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.42.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.42.18. Finished OPT passes. (There is nothing left to do.)
+
+3.43. Executing TECHMAP pass (map to technology primitives).
+
+3.43.1. Executing Verilog-2005 frontend: /home/tibrahimovic/0.git-repo/yosys/share/gatemate/mux_map.v
+Parsing Verilog input from `/home/tibrahimovic/0.git-repo/yosys/share/gatemate/mux_map.v' to AST representation.
+Generating RTLIL representation for module `\$_MUX8_'.
+Generating RTLIL representation for module `\$_MUX4_'.
+Successfully finished Verilog frontend.
+
+3.43.2. Continuing TECHMAP pass.
+Using template \$_MUX4_ for cells of type $_MUX4_.
+No more expansions possible.
+<suppressed ~504 debug messages>
+
+3.44. Executing ABC pass (technology mapping using ABC).
+
+3.44.1. Extracting gate netlist of module `\top' to `<abc-temp-dir>/input.blif'..
+Extracted 434 gates and 549 wires to a netlist network with 114 inputs and 174 outputs.
+
+3.44.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lut <abc-temp-dir>/lutdefs.txt 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + if 
+ABC: + mfs2 
+ABC: + lutpack -S 1 
+ABC: + dress <abc-temp-dir>/input.blif 
+ABC: Total number of equiv classes                =     218.
+ABC: Participating nodes from both networks       =     444.
+ABC: Participating nodes from the first network   =     217. (  78.62 % of nodes)
+ABC: Participating nodes from the second network  =     227. (  82.25 % of nodes)
+ABC: Node pairs (any polarity)                    =     217. (  78.62 % of names can be moved)
+ABC: Node pairs (same polarity)                   =     214. (  77.54 % of names can be moved)
+ABC: Total runtime =     0.02 sec
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+3.44.1.2. Re-integrating ABC results.
+ABC RESULTS:              $lut cells:      275
+ABC RESULTS:        internal signals:      261
+ABC RESULTS:           input signals:      114
+ABC RESULTS:          output signals:      174
+Removing temp directory.
+Removed 0 unused cells and 3870 unused wires.
+
+3.45. Executing TECHMAP pass (map to technology primitives).
+
+3.45.1. Executing Verilog-2005 frontend: /home/tibrahimovic/0.git-repo/yosys/share/gatemate/lut_map.v
+Parsing Verilog input from `/home/tibrahimovic/0.git-repo/yosys/share/gatemate/lut_map.v' to AST representation.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+3.45.2. Continuing TECHMAP pass.
+Using template $paramod$6e238df02989b317f10820a22773676e71120644\$lut for cells of type $lut.
+Using template $paramod$272652f6c6fbe9a75eff76e45cc7e2788835518b\$lut for cells of type $lut.
+Using template $paramod$608f40069c27841a5b3bdf03643a34bdc8974072\$lut for cells of type $lut.
+Using template $paramod$fe19758f81fe088f7cd213bfddbe5c4f0d4a2e8f\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0100 for cells of type $lut.
+Using template $paramod$6d6beead1425af15cf78b27fd9b11b41b5d4bce8\$lut for cells of type $lut.
+Using template $paramod$fb5ee0bdef1c4e74aaf1fd8efae98b46a2f5e564\$lut for cells of type $lut.
+Using template $paramod$571404c0889eaf57f492cb5e37f8acb5df5852f9\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1000 for cells of type $lut.
+Using template $paramod$658b9ed803f0d3d335616d3858b53e0a2522f1e8\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
+No more expansions possible.
+<suppressed ~447 debug messages>
+Removed 0 unused cells and 602 unused wires.
+
+3.46. Executing CLKBUFMAP pass (inserting clock buffers).
+Inserting CC_BUFG on top.genblk1[0].u_lut.clk[0].
+
+3.47. Executing HIERARCHY pass (managing design hierarchy).
+
+3.47.1. Analyzing design hierarchy..
+Top module:  \top
+
+3.47.2. Analyzing design hierarchy..
+Top module:  \top
+Removed 0 unused modules.
+
+3.48. Printing statistics.
+
+=== top ===
+
+   Number of wires:                495
+   Number of wire bits:           2753
+   Number of public wires:         226
+   Number of public wire bits:    1991
+   Number of ports:                  5
+   Number of port bits:             30
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               2421
+     $scopeinfo                     10
+     CC_ADDF                         5
+     CC_BUFG                         1
+     CC_DFF                       1600
+     CC_IBUF                        20
+     CC_LUT1                         4
+     CC_LUT2                       170
+     CC_LUT3                        10
+     CC_LUT4                        91
+     CC_MX4                        500
+     CC_OBUF                        10
+
+3.49. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Found and reported 0 problems.
+
+3.50. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 10 unused cells and 48 unused wires.
+<suppressed ~58 debug messages>
+
+3.51. Executing Verilog backend.
+
+3.51.1. Executing BMUXMAP pass.
+
+3.51.2. Executing DEMUXMAP pass.
+Dumping module `\top'.
+
+End of script. Logfile hash: 73c9b2824e, CPU: user 0.75s system 0.00s, MEM: 37.38 MB peak
+Yosys 0.42+10 (git sha1 7f89a45ad, g++ 11.4.0-1ubuntu1~22.04 -fPIC -Os)
+Time spent: 17% 22x opt_expr (0 sec), 16% 21x opt_clean (0 sec), ...

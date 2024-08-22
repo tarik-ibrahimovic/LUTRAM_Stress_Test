@@ -16,7 +16,7 @@
 /* verilator lint_off PINMISSING */
 module top 
 #(
-   parameter LUTRAM16X10 = 265
+   parameter LUTRAM16X10 = 30
 )
 (
    input   logic clk,
