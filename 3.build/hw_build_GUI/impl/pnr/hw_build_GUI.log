@@ -5,9 +5,11 @@ Reading constraint file: "D:\repos\LUTRAM_Stress_Test\1.hw\constraints\top.pinou
 Physical Constraint parsed completed
 Running placement......
 [10%] Placement Phase 0 completed
-PNR has been stopped
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+ERROR  (PR0003) : Failed to place with '145 REG(s) unPlaced ' in the device 'GW2AR-18C-QFN88P-8'
 Generate file "D:\repos\LUTRAM_Stress_Test\3.build\hw_build_GUI\impl\pnr\hw_build_GUI.pin.html" completed
 Generate file "D:\repos\LUTRAM_Stress_Test\3.build\hw_build_GUI\impl\pnr\hw_build_GUI.rpt.html" completed
 Generate file "D:\repos\LUTRAM_Stress_Test\3.build\hw_build_GUI\impl\pnr\hw_build_GUI.rpt.txt" completed
-Wed Aug 21 16:23:25 2024
+Thu Aug 22 17:03:27 2024
 

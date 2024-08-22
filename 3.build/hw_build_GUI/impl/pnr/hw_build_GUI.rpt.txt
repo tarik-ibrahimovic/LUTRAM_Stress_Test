@@ -12,24 +12,24 @@
   <Part Number>: GW2AR-LV18QN88PC8/I7
   <Device>: GW2AR-18
   <Device Version>: C
-  <Created Time>:Wed Aug 21 16:23:25 2024
+  <Created Time>:Thu Aug 22 17:03:27 2024
 
 
 2. PnR Details
 
   Running placement:
-    Placement Phase 0: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
-    Placement Phase 1: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-    Placement Phase 2: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-    Placement Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-    Placer Process stopped by user
-    Total Placement: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
+    Placement Phase 0: CPU time = 0h 0m 0.756s, Elapsed time = 0h 0m 0.756s
+    Placement Phase 1: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
+    Placement Phase 2: CPU time = 0h 0m 11s, Elapsed time = 0h 0m 11s
+    Placement Phase 3: CPU time = 0h 0m 6s, Elapsed time = 0h 0m 6s
+    ERROR  (PR0003) : Failed to place with '145 REG(s) unPlaced ' in the device 'GW2AR-18C-QFN88P-8'
+    Total Placement: CPU time = 0h 0m 20s, Elapsed time = 0h 0m 20s
  Running routing:
     ---
  Generate output files:
     CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
 
- Total Time and Memory Usage: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s, Peak memory usage = 426MB
+ Total Time and Memory Usage: CPU time = 0h 0m 20s, Elapsed time = 0h 0m 20s, Peak memory usage = 601MB
 
 
 3. Resource Usage Summary
@@ -37,15 +37,15 @@
   ----------------------------------------------------------
   Resources                   | Usage
   ----------------------------------------------------------
-  Logic                       | 15058/20736  73%
-    --LUT,ALU,ROM16           | 11170(11170 LUT, 0 ALU, 0 ROM16)
+  Logic                       | 10346/20736  50%
+    --LUT,ALU,ROM16           | 6458(6458 LUT, 0 ALU, 0 ROM16)
     --SSRAM(RAM16)            | 648
-  Register                    | 15680/15750  100%
+  Register                    | 8000/15750  51%
     --Logic Register as Latch | 0/15552  0%
-    --Logic Register as FF    | 15680/15552  101%
+    --Logic Register as FF    | 8000/15552  52%
     --I/O Register as Latch   | 0/198  0%
     --I/O Register as FF      | 0/198  0%
-  CLS                         | 0/10368  0%
+  CLS                         | 9049/10368  88%
   I/O Port                    | 35
   I/O Buf                     | 35
     --Input Buf               | 25
@@ -71,14 +71,14 @@
   -----------------------
   I/O Bank  | Usage       
   -----------------------
-  bank 0   | 0/8(0%)     
-  bank 1   | 0/9(0%)     
+  bank 0   | 3/8(37%)    
+  bank 1   | 7/9(77%)    
   bank 2   | 0/4(0%)     
-  bank 3   | 0/17(0%)    
-  bank 4   | 0/8(0%)     
-  bank 5   | 0/10(0%)    
-  bank 6   | 0/9(0%)     
-  bank 7   | 0/1(0%)     
+  bank 3   | 5/17(29%)   
+  bank 4   | 2/8(25%)    
+  bank 5   | 9/10(90%)   
+  bank 6   | 8/9(88%)    
+  bank 7   | 1/1(100%)   
   =======================
 
 
@@ -101,10 +101,10 @@ addr[5]    |           | 73/1          | Y          | in    | IOT40[A] | LVCMOS3
 addr[6]    |           | 86/0          | Y          | in    | IOT4[A]  | LVCMOS33   | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.2       
 addr[7]    |           | 49/3          | Y          | in    | IOR49[A] | LVCMOS33   | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 1.2       
 addr[8]    |           | 76/1          | Y          | in    | IOT30[B] | LVCMOS33   | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3       
-addr[9]    |           | 32/5          | N          | in    | IOB18[B] | LVCMOS18   | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3       
-addr[10]   |           | 11/6          | N          | in    | IOL29[B] | LVCMOS18   | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3       
-addr[11]   |           | 13/6          | N          | in    | IOL45[A] | LVCMOS18   | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3       
-addr[12]   |           | 10/6          | N          | in    | IOL29[A] | LVCMOS18   | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3       
+addr[9]    |           | 13/6          | N          | in    | IOL45[A] | LVCMOS18   | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3       
+addr[10]   |           | 10/6          | N          | in    | IOL29[A] | LVCMOS18   | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3       
+addr[11]   |           | 72/1          | N          | in    | IOT40[B] | LVCMOS18   | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3       
+addr[12]   |           | 71/1          | N          | in    | IOT44[A] | LVCMOS18   | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3       
 we         |           | 48/3          | Y          | in    | IOR49[B] | LVCMOS33   | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 1.2       
 wdat[0]    |           | 51/3          | Y          | in    | IOR45[A] | LVCMOS33   | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 1.2       
 wdat[1]    |           | 63/3          | Y          | in    | IOR29[A] | LVCMOS33   | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 1.2       
@@ -149,8 +149,8 @@ Loc./Bank| Signal    | Dir.  | Site     | IO Type  | Drive | Pull Mode | PCI Cla
 75/1     | addr[3]   | in    | IOT34[A] | LVCMOS33 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3  
 74/1     | addr[4]   | in    | IOT34[B] | LVCMOS33 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3  
 73/1     | addr[5]   | in    | IOT40[A] | LVCMOS33 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3  
-72/1     | -         | in    | IOT40[B] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3  
-71/1     | -         | in    | IOT44[A] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3  
+72/1     | addr[11]  | in    | IOT40[B] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3  
+71/1     | addr[12]  | in    | IOT44[A] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3  
 70/1     | -         | in    | IOT44[B] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3  
 69/1     | -         | in    | IOT50[A] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3  
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -161,7 +161,7 @@ Loc./Bank| Signal    | Dir.  | Site     | IO Type  | Drive | Pull Mode | PCI Cla
 29/5     | rdat[8]   | out   | IOB14[A] | LVCMOS33 | 8     | UP        | NA        | NA         | OFF        | NA         | NA              | NA            | 3.3  
 30/5     | rdat[7]   | out   | IOB14[B] | LVCMOS33 | 8     | UP        | NA        | NA         | OFF        | NA         | NA              | NA            | 3.3  
 31/5     | rdat[6]   | out   | IOB18[A] | LVCMOS33 | 8     | UP        | NA        | NA         | OFF        | NA         | NA              | NA            | 3.3  
-32/5     | addr[9]   | in    | IOB18[B] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3  
+32/5     | -         | in    | IOB18[B] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3  
 33/5     | wdat[2]   | in    | IOB24[A] | LVCMOS33 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3  
 34/5     | wdat[6]   | in    | IOB24[B] | LVCMOS33 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3  
 35/4     | -         | in    | IOB30[A] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.2  
@@ -174,9 +174,9 @@ Loc./Bank| Signal    | Dir.  | Site     | IO Type  | Drive | Pull Mode | PCI Cla
 41/4     | wdat[3]   | in    | IOB43[A] | LVCMOS33 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.2  
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 4/7      | clk       | in    | IOL7[A]  | LVCMOS33 | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 1.2  
-10/6     | addr[12]  | in    | IOL29[A] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3  
-11/6     | addr[10]  | in    | IOL29[B] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3  
-13/6     | addr[11]  | in    | IOL45[A] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3  
+10/6     | addr[10]  | in    | IOL29[A] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3  
+11/6     | -         | in    | IOL29[B] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3  
+13/6     | addr[9]   | in    | IOL45[A] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3  
 15/6     | rdat[0]   | out   | IOL47[A] | LVCMOS33 | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 3.3  
 16/6     | rdat[1]   | out   | IOL47[B] | LVCMOS33 | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 3.3  
 17/6     | rdat[2]   | out   | IOL49[A] | LVCMOS33 | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 3.3  

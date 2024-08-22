@@ -83,7 +83,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Wed Aug 21 16:23:25 2024
+<td>Thu Aug 22 17:03:27 2024
 </td>
 </tr>
 <tr>
@@ -97,12 +97,12 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <tr>
 <td class="label">Place & Route Process</td>
 <td>Running placement:
-   Placement Phase 0: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
-   Placement Phase 1: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-   Placement Phase 2: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-   Placement Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-   Placer Process stopped by user
-   Total Placement: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
+   Placement Phase 0: CPU time = 0h 0m 0.756s, Elapsed time = 0h 0m 0.756s
+   Placement Phase 1: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
+   Placement Phase 2: CPU time = 0h 0m 11s, Elapsed time = 0h 0m 11s
+   Placement Phase 3: CPU time = 0h 0m 6s, Elapsed time = 0h 0m 6s
+   ERROR  (PR0003) : Failed to place with '145 REG(s) unPlaced ' in the device 'GW2AR-18C-QFN88P-8'
+   Total Placement: CPU time = 0h 0m 20s, Elapsed time = 0h 0m 20s
 Running routing:
    ---
 Generate output files:
@@ -111,7 +111,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Total Time and Memory Usage</td>
-<td>CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s, Peak memory usage = 426MB</td>
+<td>CPU time = 0h 0m 20s, Elapsed time = 0h 0m 20s, Peak memory usage = 601MB</td>
 </tr>
 </table>
 <br/>
@@ -126,12 +126,12 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Logic</td>
-<td>15058/20736</td>
-<td>73%</td>
+<td>10346/20736</td>
+<td>50%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --LUT,ALU,ROM16</td>
-<td>11170(11170 LUT, 0 ALU, 0 ROM16)</td>
+<td>6458(6458 LUT, 0 ALU, 0 ROM16)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -141,8 +141,8 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Register</td>
-<td>15680/15750</td>
-<td>100%</td>
+<td>8000/15750</td>
+<td>51%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --Logic Register as Latch</td>
@@ -151,8 +151,8 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --Logic Register as FF</td>
-<td>15680/15552</td>
-<td>101%</td>
+<td>8000/15552</td>
+<td>52%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --I/O Register as Latch</td>
@@ -166,8 +166,8 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">CLS</td>
-<td>0/10368</td>
-<td>0%</td>
+<td>9049/10368</td>
+<td>88%</td>
 </tr>
 <tr>
 <td class="label">I/O Port</td>
@@ -257,11 +257,11 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">bank 0</td>
-<td>0/8(0%)</td>
+<td>3/8(37%)</td>
 </tr>
 <tr>
 <td class="label">bank 1</td>
-<td>0/9(0%)</td>
+<td>7/9(77%)</td>
 </tr>
 <tr>
 <td class="label">bank 2</td>
@@ -269,23 +269,23 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">bank 3</td>
-<td>0/17(0%)</td>
+<td>5/17(29%)</td>
 </tr>
 <tr>
 <td class="label">bank 4</td>
-<td>0/8(0%)</td>
+<td>2/8(25%)</td>
 </tr>
 <tr>
 <td class="label">bank 5</td>
-<td>0/10(0%)</td>
+<td>9/10(90%)</td>
 </tr>
 <tr>
 <td class="label">bank 6</td>
-<td>0/9(0%)</td>
+<td>8/9(88%)</td>
 </tr>
 <tr>
 <td class="label">bank 7</td>
-<td>0/1(0%)</td>
+<td>1/1(100%)</td>
 </tr>
 </table>
 <br/>
@@ -492,42 +492,6 @@ Generate output files:
 <tr>
 <td class="label">addr[9]</td>
 <td></td>
-<td>32/5</td>
-<td>N</td>
-<td>in</td>
-<td>IOB18[B]</td>
-<td>LVCMOS18</td>
-<td>NA</td>
-<td>UP</td>
-<td>ON</td>
-<td>NONE</td>
-<td>NA</td>
-<td>NA</td>
-<td>NA</td>
-<td>NA</td>
-<td>3.3</td>
-</tr>
-<tr>
-<td class="label">addr[10]</td>
-<td></td>
-<td>11/6</td>
-<td>N</td>
-<td>in</td>
-<td>IOL29[B]</td>
-<td>LVCMOS18</td>
-<td>NA</td>
-<td>UP</td>
-<td>ON</td>
-<td>NONE</td>
-<td>NA</td>
-<td>NA</td>
-<td>OFF</td>
-<td>NA</td>
-<td>3.3</td>
-</tr>
-<tr>
-<td class="label">addr[11]</td>
-<td></td>
 <td>13/6</td>
 <td>N</td>
 <td>in</td>
@@ -544,7 +508,7 @@ Generate output files:
 <td>3.3</td>
 </tr>
 <tr>
-<td class="label">addr[12]</td>
+<td class="label">addr[10]</td>
 <td></td>
 <td>10/6</td>
 <td>N</td>
@@ -558,6 +522,42 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
+<td>NA</td>
+<td>3.3</td>
+</tr>
+<tr>
+<td class="label">addr[11]</td>
+<td></td>
+<td>72/1</td>
+<td>N</td>
+<td>in</td>
+<td>IOT40[B]</td>
+<td>LVCMOS18</td>
+<td>NA</td>
+<td>UP</td>
+<td>ON</td>
+<td>NONE</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>3.3</td>
+</tr>
+<tr>
+<td class="label">addr[12]</td>
+<td></td>
+<td>71/1</td>
+<td>N</td>
+<td>in</td>
+<td>IOT44[A]</td>
+<td>LVCMOS18</td>
+<td>NA</td>
+<td>UP</td>
+<td>ON</td>
+<td>NONE</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
 <td>NA</td>
 <td>3.3</td>
 </tr>
@@ -1169,7 +1169,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">72/1</td>
-<td>-</td>
+<td>addr[11]</td>
 <td>in</td>
 <td>IOT40[B]</td>
 <td>LVCMOS18</td>
@@ -1185,7 +1185,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">71/1</td>
-<td>-</td>
+<td>addr[12]</td>
 <td>in</td>
 <td>IOT44[A]</td>
 <td>LVCMOS18</td>
@@ -1345,7 +1345,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">32/5</td>
-<td>addr[9]</td>
+<td>-</td>
 <td>in</td>
 <td>IOB18[B]</td>
 <td>LVCMOS18</td>
@@ -1537,7 +1537,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">10/6</td>
-<td>addr[12]</td>
+<td>addr[10]</td>
 <td>in</td>
 <td>IOL29[A]</td>
 <td>LVCMOS18</td>
@@ -1553,7 +1553,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">11/6</td>
-<td>addr[10]</td>
+<td>-</td>
 <td>in</td>
 <td>IOL29[B]</td>
 <td>LVCMOS18</td>
@@ -1563,13 +1563,13 @@ Generate output files:
 <td>NONE</td>
 <td>NA</td>
 <td>NA</td>
-<td>OFF</td>
+<td>NA</td>
 <td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
 <td class="label">13/6</td>
-<td>addr[11]</td>
+<td>addr[9]</td>
 <td>in</td>
 <td>IOL45[A]</td>
 <td>LVCMOS18</td>

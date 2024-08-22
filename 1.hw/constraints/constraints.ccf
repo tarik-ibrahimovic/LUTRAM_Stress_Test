@@ -96,28 +96,40 @@
 # #######################################################
 # -------------------------------------------------------
 Pin_in "clk" Loc = "IO_SB_A8"  | SCHMITT_TRIGGER=true; # CLK0
-Pin_in "arst_n" Loc = "IO_SB_B7" | PULLUP=true; # FPGA_BUT
-Pin_out "led" Loc = "IO_SB_B6"; # FPGA LED
 
-Pin_in       "uart_rx"         Loc = "IO_SA_A6";
-Pin_out      "uart_tx"         Loc = "IO_SA_B6";
+Pin_in "addr[0]" Loc = "IO_NA_A0";
+Pin_in "addr[1]" Loc = "IO_NA_A1";
+Pin_in "addr[2]" Loc = "IO_NA_A2";
+Pin_in "addr[3]" Loc = "IO_NA_A3";
+Pin_in "addr[4]" Loc = "IO_NA_A4";
+Pin_in "addr[5]" Loc = "IO_NA_A5";
+Pin_in "addr[6]" Loc = "IO_NA_A6";
+Pin_in "addr[7]" Loc = "IO_NA_A7";
+Pin_in "addr[8]" Loc = "IO_NA_A8";
 
-Pin_out      "sent"                Loc = "IO_NB_A1";
-Pin_out      "tick_02us"       Loc = "IO_NB_A2";
+Pin_out "rdat[0]" Loc = "IO_NA_B0";
+Pin_out "rdat[1]" Loc = "IO_NA_B1";
+Pin_out "rdat[2]" Loc = "IO_NA_B2";
+Pin_out "rdat[3]" Loc = "IO_NA_B3";
+Pin_out "rdat[4]" Loc = "IO_NA_B4";
+Pin_out "rdat[5]" Loc = "IO_NA_B5";
+Pin_out "rdat[6]" Loc = "IO_NA_B6";
+Pin_out "rdat[7]" Loc = "IO_NA_B7";
+Pin_out "rdat[8]" Loc = "IO_NA_B8";
+Pin_out "rdat[9]" Loc = "IO_NB_A0";
 
+Pin_in "wdat[0]" Loc = "IO_NB_A1";
+Pin_in "wdat[1]" Loc = "IO_NB_A2";
+Pin_in "wdat[2]" Loc = "IO_NB_A3";
+Pin_in "wdat[3]" Loc = "IO_NB_A4";
+Pin_in "wdat[4]" Loc = "IO_NB_A5";
+Pin_in "wdat[5]" Loc = "IO_NB_A6";
+Pin_in "wdat[6]" Loc = "IO_NB_A7";
+Pin_in "wdat[7]" Loc = "IO_NB_A8";
+Pin_in "wdat[8]" Loc = "IO_NB_B0";
+Pin_in "wdat[9]" Loc = "IO_NB_B1";
 
-#PSRAM
-Pin_out     "o_psram_csn"       Loc = "IO_WC_A4"; # PSRAM CSn
-Pin_out     "o_psram_sclk"      Loc = "IO_WC_B4"; # PSRAM SCLK
-Pin_inout   "io_psram_data0"    Loc = "IO_WC_A5"; # PSRAM DATA0
-Pin_inout   "io_psram_data1"    Loc = "IO_WC_B5"; # PSRAM DATA1
-Pin_inout   "io_psram_data2"    Loc = "IO_WC_A6"; # PSRAM DATA2
-Pin_inout   "io_psram_data3"    Loc = "IO_WC_B6"; # PSRAM DATA3
-Pin_inout   "io_psram_data4"    Loc = "IO_WC_A7"; # PSRAM DATA4
-Pin_inout   "io_psram_data5"    Loc = "IO_WC_B7"; # PSRAM DATA5
-Pin_inout   "io_psram_data6"    Loc = "IO_WC_A8"; # PSRAM DATA6
-Pin_inout   "io_psram_data7"    Loc = "IO_WC_B8"; # PSRAM DATA7
-
+Pin_in "we" Loc = "IO_NB_B2";
 
 ## #######################################################
 ## End of hardware constraints blink.ccf
