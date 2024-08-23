@@ -44,6 +44,13 @@
      id="layer1"
      transform="translate(-23.885992,-52.703413)">
     <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.529;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect7621"
+       width="185.20833"
+       height="160.13043"
+       x="24.57621"
+       y="53.163559" />
+    <rect
        style="fill:none;fill-opacity:1;stroke:#1a1a1a;stroke-width:1.43092;stroke-dasharray:none;stroke-opacity:0.822266"
        id="rect3061"
        width="130.97765"
