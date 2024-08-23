@@ -20,7 +20,7 @@ Gowin propriatary toolchain is provided in GUI form only, start the project, run
 
 If for any reason you want to simulate the design run `make` in `2.sim`, for CCGM1A1 post-synthesis and post-pnr sims are avaliable also.
 ## Results
-### Gowin GW2AR-18C - 255 modules max
+### Gowin GW2AR-18C - 255 modules
 Tool settings: Placer-1 priority to routability, Router-0 default, max fanout 23
 
 Synthesis maximum numbers:
@@ -42,7 +42,7 @@ PnR included maximum numbers:
     Error: Failed to place 145 REG(s)
 
 
-### CologneChip CCGM1A1 - 24 modules max
+### CologneChip CCGM1A1 - 24 modules
 Tool settings: om-3 (speed), tm-3(worst timing)
 
 Synthesis only maximum numbers: N/A because the number of primitives used obtained by synhtesis isn't easily mappable to the final number of CPEs used which is known only after PnR. 
